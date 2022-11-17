@@ -1,0 +1,11 @@
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\bin\Debug\MyBagelShop.exe.config
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\bin\Debug\MyBagelShop.exe
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\bin\Debug\MyBagelShop.pdb
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.csproj.AssemblyReference.cache
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.MyBagelShopApp.resources
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.Properties.Resources.resources
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.exe
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.pdb

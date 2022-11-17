@@ -1,6 +1,6 @@
-﻿namespace MyBagelShopApplication
+﻿namespace MyBagelShop
 {
-    partial class Form1
+    partial class MyBagelShopApp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // MyBagelShopApp
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1513, 1147);
+            this.Name = "MyBagelShopApp";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

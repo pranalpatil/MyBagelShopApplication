@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyBagelShopApplication.Properties
+namespace MyBagelShop.Properties
 {
 
 
