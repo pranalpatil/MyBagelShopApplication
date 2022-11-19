@@ -55,15 +55,14 @@
             this.orderDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.removeBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
-            this.ItemGroupBox = new System.Windows.Forms.ListBox();
-            this.clearBtn = new System.Windows.Forms.Button();
-            this.addToCartBtn = new System.Windows.Forms.Button();
             this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.totalDisplayLabel = new System.Windows.Forms.Label();
             this.priceDisplayLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
+            this.clearBtn = new System.Windows.Forms.Button();
+            this.addToCartBtn = new System.Windows.Forms.Button();
             this.saleReportBtn = new System.Windows.Forms.Button();
             this.stockDataBtn = new System.Windows.Forms.Button();
             this.searchTrxGroupBox = new System.Windows.Forms.GroupBox();
@@ -78,6 +77,7 @@
             this.extraImagePictureBox = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.btnToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ItemGroupBox = new System.Windows.Forms.ListBox();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.selectBagelgroupBox.SuspendLayout();
@@ -345,7 +345,7 @@
             // removeBtn
             // 
             this.removeBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeBtn.Location = new System.Drawing.Point(816, 275);
+            this.removeBtn.Location = new System.Drawing.Point(804, 286);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(216, 41);
             this.removeBtn.TabIndex = 27;
@@ -358,44 +358,13 @@
             this.orderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
             this.orderBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.orderBtn.Location = new System.Drawing.Point(428, 229);
+            this.orderBtn.Location = new System.Drawing.Point(398, 229);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(216, 87);
             this.orderBtn.TabIndex = 26;
             this.orderBtn.Text = "&Order";
             this.btnToolTip.SetToolTip(this.orderBtn, "Press the order button To place an order & checkout");
             this.orderBtn.UseVisualStyleBackColor = false;
-            // 
-            // ItemGroupBox
-            // 
-            this.ItemGroupBox.FormattingEnabled = true;
-            this.ItemGroupBox.ItemHeight = 29;
-            this.ItemGroupBox.Location = new System.Drawing.Point(723, 25);
-            this.ItemGroupBox.Name = "ItemGroupBox";
-            this.ItemGroupBox.Size = new System.Drawing.Size(435, 236);
-            this.ItemGroupBox.TabIndex = 17;
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(662, 466);
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(216, 41);
-            this.clearBtn.TabIndex = 25;
-            this.clearBtn.Text = "&Clear";
-            this.btnToolTip.SetToolTip(this.clearBtn, "Press Clear button to take new order");
-            this.clearBtn.UseVisualStyleBackColor = true;
-            // 
-            // addToCartBtn
-            // 
-            this.addToCartBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartBtn.Location = new System.Drawing.Point(288, 466);
-            this.addToCartBtn.Name = "addToCartBtn";
-            this.addToCartBtn.Size = new System.Drawing.Size(216, 41);
-            this.addToCartBtn.TabIndex = 24;
-            this.addToCartBtn.Text = "&Add to Cart";
-            this.btnToolTip.SetToolTip(this.addToCartBtn, "Press the Add to Cart button, To add the chosen bagel to your cart");
-            this.addToCartBtn.UseVisualStyleBackColor = true;
             // 
             // quantityNumericUpDown
             // 
@@ -446,6 +415,29 @@
             this.priceLabel.Size = new System.Drawing.Size(71, 29);
             this.priceLabel.TabIndex = 17;
             this.priceLabel.Text = "Price";
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.Location = new System.Drawing.Point(662, 466);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(216, 41);
+            this.clearBtn.TabIndex = 25;
+            this.clearBtn.Text = "&Clear";
+            this.btnToolTip.SetToolTip(this.clearBtn, "Press Clear button to take new order");
+            this.clearBtn.UseVisualStyleBackColor = true;
+            // 
+            // addToCartBtn
+            // 
+            this.addToCartBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addToCartBtn.Location = new System.Drawing.Point(288, 466);
+            this.addToCartBtn.Name = "addToCartBtn";
+            this.addToCartBtn.Size = new System.Drawing.Size(216, 41);
+            this.addToCartBtn.TabIndex = 24;
+            this.addToCartBtn.Text = "&Add to Cart";
+            this.btnToolTip.SetToolTip(this.addToCartBtn, "Press the Add to Cart button, To add the chosen bagel to your cart");
+            this.addToCartBtn.UseVisualStyleBackColor = true;
+            this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
             // saleReportBtn
             // 
@@ -587,6 +579,15 @@
             this.btnToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.btnToolTip.ToolTipTitle = "Info";
             // 
+            // ItemGroupBox
+            // 
+            this.ItemGroupBox.FormattingEnabled = true;
+            this.ItemGroupBox.ItemHeight = 29;
+            this.ItemGroupBox.Location = new System.Drawing.Point(635, 33);
+            this.ItemGroupBox.Name = "ItemGroupBox";
+            this.ItemGroupBox.Size = new System.Drawing.Size(523, 236);
+            this.ItemGroupBox.TabIndex = 17;
+            // 
             // MyBagelShopApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -657,7 +658,6 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Label quantityLabel;
         private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.ListBox ItemGroupBox;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button saleReportBtn;
         private System.Windows.Forms.Button stockDataBtn;
@@ -673,6 +673,7 @@
         private System.Windows.Forms.PictureBox extraImagePictureBox;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ToolTip btnToolTip;
+        private System.Windows.Forms.ListBox ItemGroupBox;
     }
 }
 
