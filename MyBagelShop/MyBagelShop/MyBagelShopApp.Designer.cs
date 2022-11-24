@@ -45,7 +45,7 @@
             this.onionBtn = new System.Windows.Forms.Button();
             this.chocolateChipBtn = new System.Windows.Forms.Button();
             this.blueberryBtn = new System.Windows.Forms.Button();
-            this.button1everythingBtn = new System.Windows.Forms.Button();
+            this.everythingBtn = new System.Windows.Forms.Button();
             this.sizeSelectGroupBox = new System.Windows.Forms.GroupBox();
             this.extraLargeSizeBtn = new System.Windows.Forms.Button();
             this.largeSizeBtn = new System.Windows.Forms.Button();
@@ -55,6 +55,7 @@
             this.orderDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.removeBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
+            this.ItemGroupBox = new System.Windows.Forms.ListBox();
             this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.totalDisplayLabel = new System.Windows.Forms.Label();
             this.priceDisplayLabel = new System.Windows.Forms.Label();
@@ -77,7 +78,8 @@
             this.extraImagePictureBox = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.btnToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.ItemGroupBox = new System.Windows.Forms.ListBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.selectBagelgroupBox.SuspendLayout();
@@ -118,6 +120,7 @@
             this.wholeWheatBtn.TabIndex = 1;
             this.wholeWheatBtn.Text = "Whole Wheat";
             this.wholeWheatBtn.UseVisualStyleBackColor = true;
+            this.wholeWheatBtn.Click += new System.EventHandler(this.wholeWheatBtn_Click);
             // 
             // selectBagelgroupBox
             // 
@@ -132,7 +135,7 @@
             this.selectBagelgroupBox.Controls.Add(this.onionBtn);
             this.selectBagelgroupBox.Controls.Add(this.chocolateChipBtn);
             this.selectBagelgroupBox.Controls.Add(this.blueberryBtn);
-            this.selectBagelgroupBox.Controls.Add(this.button1everythingBtn);
+            this.selectBagelgroupBox.Controls.Add(this.everythingBtn);
             this.selectBagelgroupBox.Controls.Add(this.wholeWheatBtn);
             this.selectBagelgroupBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectBagelgroupBox.Location = new System.Drawing.Point(12, 148);
@@ -253,15 +256,16 @@
             this.blueberryBtn.Text = "Blueberry";
             this.blueberryBtn.UseVisualStyleBackColor = true;
             // 
-            // button1everythingBtn
+            // everythingBtn
             // 
-            this.button1everythingBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1everythingBtn.Location = new System.Drawing.Point(170, 34);
-            this.button1everythingBtn.Name = "button1everythingBtn";
-            this.button1everythingBtn.Size = new System.Drawing.Size(149, 116);
-            this.button1everythingBtn.TabIndex = 2;
-            this.button1everythingBtn.Text = "Everything";
-            this.button1everythingBtn.UseVisualStyleBackColor = true;
+            this.everythingBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.everythingBtn.Location = new System.Drawing.Point(170, 34);
+            this.everythingBtn.Name = "everythingBtn";
+            this.everythingBtn.Size = new System.Drawing.Size(149, 116);
+            this.everythingBtn.TabIndex = 2;
+            this.everythingBtn.Text = "Everything";
+            this.everythingBtn.UseVisualStyleBackColor = true;
+            this.everythingBtn.Click += new System.EventHandler(this.everythingBtn_Click);
             // 
             // sizeSelectGroupBox
             // 
@@ -313,6 +317,7 @@
             this.mediumSizeBtn.TabIndex = 1;
             this.mediumSizeBtn.Text = "Medium";
             this.mediumSizeBtn.UseVisualStyleBackColor = true;
+            this.mediumSizeBtn.Click += new System.EventHandler(this.mediumSizeBtn_Click);
             // 
             // smallSizeBtn
             // 
@@ -322,6 +327,7 @@
             this.smallSizeBtn.TabIndex = 0;
             this.smallSizeBtn.Text = "Small";
             this.smallSizeBtn.UseVisualStyleBackColor = true;
+            this.smallSizeBtn.Click += new System.EventHandler(this.smallSizeBtn_Click);
             // 
             // orderDetailsGroupBox
             // 
@@ -365,6 +371,15 @@
             this.orderBtn.Text = "&Order";
             this.btnToolTip.SetToolTip(this.orderBtn, "Press the order button To place an order & checkout");
             this.orderBtn.UseVisualStyleBackColor = false;
+            // 
+            // ItemGroupBox
+            // 
+            this.ItemGroupBox.FormattingEnabled = true;
+            this.ItemGroupBox.ItemHeight = 29;
+            this.ItemGroupBox.Location = new System.Drawing.Point(635, 33);
+            this.ItemGroupBox.Name = "ItemGroupBox";
+            this.ItemGroupBox.Size = new System.Drawing.Size(523, 236);
+            this.ItemGroupBox.TabIndex = 17;
             // 
             // quantityNumericUpDown
             // 
@@ -579,14 +594,28 @@
             this.btnToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.btnToolTip.ToolTipTitle = "Info";
             // 
-            // ItemGroupBox
+            // radioButton1
             // 
-            this.ItemGroupBox.FormattingEnabled = true;
-            this.ItemGroupBox.ItemHeight = 29;
-            this.ItemGroupBox.Location = new System.Drawing.Point(635, 33);
-            this.ItemGroupBox.Name = "ItemGroupBox";
-            this.ItemGroupBox.Size = new System.Drawing.Size(523, 236);
-            this.ItemGroupBox.TabIndex = 17;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(1019, 467);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(165, 29);
+            this.radioButton1.TabIndex = 34;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.everythingBtn_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(1393, 490);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(165, 29);
+            this.radioButton2.TabIndex = 35;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // MyBagelShopApp
             // 
@@ -594,6 +623,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1659, 1281);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.extraImagePictureBox);
             this.Controls.Add(this.panel1);
@@ -621,6 +652,7 @@
             this.searchTrxGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.extraImagePictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -641,7 +673,7 @@
         private System.Windows.Forms.Button onionBtn;
         private System.Windows.Forms.Button chocolateChipBtn;
         private System.Windows.Forms.Button blueberryBtn;
-        private System.Windows.Forms.Button button1everythingBtn;
+        private System.Windows.Forms.Button everythingBtn;
         private System.Windows.Forms.GroupBox sizeSelectGroupBox;
         private System.Windows.Forms.Button extraLargeSizeBtn;
         private System.Windows.Forms.Button largeSizeBtn;
@@ -674,6 +706,8 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ToolTip btnToolTip;
         private System.Windows.Forms.ListBox ItemGroupBox;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 
