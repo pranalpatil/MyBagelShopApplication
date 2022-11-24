@@ -54,7 +54,95 @@ namespace MyBagelShop
                     bagelPricesDict.Add("Everything Large", Convert.ToDecimal(individualPrices[3]));
                     bagelPricesDict.Add("Everything Extra-Large", Convert.ToDecimal(individualPrices[4]));
                 }
-
+                else if (counter == 2)
+                {
+                    bagelPricesDict.Add("Blueberry Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Blueberry Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Blueberry Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Blueberry Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Blueberry Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 3)
+                {
+                    bagelPricesDict.Add("Chocolate Chip Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Chocolate Chip Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Chocolate Chip Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Chocolate Chip Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Chocolate Chip Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 4)
+                {
+                    bagelPricesDict.Add("Onion Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Onion Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Onion Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Onion Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Onion Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 5)
+                {
+                    bagelPricesDict.Add("Asiago Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Asiago Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Asiago Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Asiago Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Asiago Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 6)
+                {
+                    bagelPricesDict.Add("Salt Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Salt Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Salt Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Salt Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Salt Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 7)
+                {
+                    bagelPricesDict.Add("Poppy Seed Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Poppy Seed Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Poppy Seed Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Poppy Seed Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Poppy Seed Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 8)
+                {
+                    bagelPricesDict.Add("French Toast Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("French Toast Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("French Toast Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("French Toast Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("French Toast Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 9)
+                {
+                    bagelPricesDict.Add("Egg Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Egg Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Egg Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Egg Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Egg Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 10)
+                {
+                    bagelPricesDict.Add("Garlic Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Garlic Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Garlic Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Garlic Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Garlic Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 11)
+                {
+                    bagelPricesDict.Add("Sesame Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Sesame Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Sesame Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Sesame Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Sesame Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                else if (counter == 12)
+                {
+                    bagelPricesDict.Add("Cheddar Small", Convert.ToDecimal(individualPrices[0]));
+                    bagelPricesDict.Add("Cheddar Medium", Convert.ToDecimal(individualPrices[1]));
+                    bagelPricesDict.Add("Cheddar Regular", Convert.ToDecimal(individualPrices[2]));
+                    bagelPricesDict.Add("Cheddar Large", Convert.ToDecimal(individualPrices[3]));
+                    bagelPricesDict.Add("Cheddar Extra-Large", Convert.ToDecimal(individualPrices[4]));
+                }
+                
 
                 counter++;
             }
@@ -72,25 +160,6 @@ namespace MyBagelShop
 
         private static String[] BeagelNames = { "Whole Wheat", "Everything", "Insert", "Blueberry", "Chocolate Chip", "Onion", "Asiago", "Salt", "Poppy Seed", "French Toast", "Egg", "Garlic", "Sesame", "Cheddar" };
         const string PriceFilePath = "PriceListBagel.txt";
-        Decimal wholeWheattotal,everythingtotal;
-
-        decimal[,] prices =
-        {
-            {3.5m,4.3m,4.8m,5.3m,6m},               //Row 0   
-            {3.8m,4.44m,5.6m,5.8m,6.32m},           //Row 1
-            {4.2m,4.89m,5.3m,6.65m,7m},             //Row 2
-            {3.5m,4.6m,5.4m,5.89m,7.33m},           //Row 3
-            {2.99m,4.43m,5.67m,6.8m,7.2m},          //Row 4
-            {3.5m,4.7m,5.7m,7.22m,8.43m},           //Row 5
-            {4.2m,5.4m,6.89m,7.66m,8.22m},          //Row 6
-            {3.5m,4.89m,5.56m,6.5m,7.45m},          //Row 7
-            {2.7m,4.3m,5.76m,7.45m,9.45m},          //Row 8
-            {3.57m,4.6m,6.5m,7.89m,8.99m},          //Row 9
-            {2.99m,3.59m,4.23m,6.23m,7.99m},        //Row 10
-            {3.5m,4.3m,6.56m,7.67m,8.33m},          //Row 11
-            {4.2m,5.55m,6.45m,8.15m,10.99m}         //Row 12
-
-        };
         
 
         
@@ -100,6 +169,100 @@ namespace MyBagelShop
             button1Clicked = true;
             bagelType = "Whole Wheat";
         }
+        private void everythingBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Everything";
+        }
+        private void blueberryBtn_Click(object sender, EventArgs e)
+        {
+
+            button1Clicked = true;
+            bagelType = "Blueberry";
+
+        }
+        private void chocolateChipBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Chocolate Chip";
+        }
+        private void cheddarBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Cheddar"; 
+        }
+        private void asiagoBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Asiago";
+
+        }
+        private void saltBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Salt";
+
+        }
+        private void poppySeedBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Poppy Seed";
+
+        }
+        private void frenchToastBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "French Toast";
+        }
+        private void eggBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Egg";
+        }
+        private void garlicBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Garlic";
+        }
+        private void sesameBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Sesame";
+        }
+        private void onionBtn_Click(object sender, EventArgs e)
+        {
+            button1Clicked = true;
+            bagelType = "Onion";
+        }
+        private void smallSizeBtn_Click(object sender, EventArgs e)
+        {
+            button2Clicked = true;
+            bagelSize = "Small";
+        }
+        private void mediumSizeBtn_Click(object sender, EventArgs e)
+        {
+            button2Clicked = true;
+            bagelSize = "Medium";
+        }
+        private void regularSizeBtn_Click(object sender, EventArgs e)
+        {
+            button2Clicked = true;
+            bagelSize = "Regular";
+
+        }
+        private void largeSizeBtn_Click(object sender, EventArgs e)
+        {
+            button2Clicked = true;
+            bagelSize = "Large";
+
+        }
+        private void extraLargeSizeBtn_Click(object sender, EventArgs e)
+        {
+            button2Clicked = true;
+            bagelSize = "Extra-Large";
+
+        }
+
 
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
@@ -114,22 +277,6 @@ namespace MyBagelShop
             }
         }
 
-        private void smallSizeBtn_Click(object sender, EventArgs e)
-        {
-            button2Clicked = true;
-            bagelSize = "Small";
-        }
-
-        private void mediumSizeBtn_Click(object sender, EventArgs e)
-        {
-            button2Clicked = true;
-            bagelSize = "Medium";
-        }
-
-        private void everythingBtn_Click(object sender, EventArgs e)
-        {
-            button1Clicked = true;
-            bagelType = "Everything";
-        }
+        
     }
 }

@@ -52,16 +52,10 @@
             this.regularSizeBtn = new System.Windows.Forms.Button();
             this.mediumSizeBtn = new System.Windows.Forms.Button();
             this.smallSizeBtn = new System.Windows.Forms.Button();
-            this.orderDetailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.removeBtn = new System.Windows.Forms.Button();
             this.orderBtn = new System.Windows.Forms.Button();
             this.ItemGroupBox = new System.Windows.Forms.ListBox();
-            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.totalDisplayLabel = new System.Windows.Forms.Label();
-            this.priceDisplayLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
-            this.quantityLabel = new System.Windows.Forms.Label();
-            this.priceLabel = new System.Windows.Forms.Label();
             this.clearBtn = new System.Windows.Forms.Button();
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.saleReportBtn = new System.Windows.Forms.Button();
@@ -78,14 +72,10 @@
             this.extraImagePictureBox = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.btnToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.selectBagelgroupBox.SuspendLayout();
             this.sizeSelectGroupBox.SuspendLayout();
-            this.orderDetailsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
             this.searchTrxGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.extraImagePictureBox)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +88,7 @@
             this.topPanel.Controls.Add(this.logoPictureBox);
             this.topPanel.Location = new System.Drawing.Point(0, -3);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1662, 145);
+            this.topPanel.Size = new System.Drawing.Size(1671, 145);
             this.topPanel.TabIndex = 0;
             // 
             // logoPictureBox
@@ -154,6 +144,7 @@
             this.saltBtn.TabIndex = 13;
             this.saltBtn.Text = "Salt";
             this.saltBtn.UseVisualStyleBackColor = true;
+            this.saltBtn.Click += new System.EventHandler(this.saltBtn_Click);
             // 
             // cheddarBtn
             // 
@@ -164,6 +155,7 @@
             this.cheddarBtn.TabIndex = 12;
             this.cheddarBtn.Text = "Cheddar";
             this.cheddarBtn.UseVisualStyleBackColor = true;
+            this.cheddarBtn.Click += new System.EventHandler(this.cheddarBtn_Click);
             // 
             // sesameBtn
             // 
@@ -174,6 +166,7 @@
             this.sesameBtn.TabIndex = 11;
             this.sesameBtn.Text = "Sesame";
             this.sesameBtn.UseVisualStyleBackColor = true;
+            this.sesameBtn.Click += new System.EventHandler(this.sesameBtn_Click);
             // 
             // garlicBtn
             // 
@@ -184,6 +177,7 @@
             this.garlicBtn.TabIndex = 10;
             this.garlicBtn.Text = "Garlic";
             this.garlicBtn.UseVisualStyleBackColor = true;
+            this.garlicBtn.Click += new System.EventHandler(this.garlicBtn_Click);
             // 
             // eggBtn
             // 
@@ -194,6 +188,7 @@
             this.eggBtn.TabIndex = 9;
             this.eggBtn.Text = "Egg";
             this.eggBtn.UseVisualStyleBackColor = true;
+            this.eggBtn.Click += new System.EventHandler(this.eggBtn_Click);
             // 
             // frenchToastBtn
             // 
@@ -204,6 +199,7 @@
             this.frenchToastBtn.TabIndex = 8;
             this.frenchToastBtn.Text = "French Toast";
             this.frenchToastBtn.UseVisualStyleBackColor = true;
+            this.frenchToastBtn.Click += new System.EventHandler(this.frenchToastBtn_Click);
             // 
             // poppySeedBtn
             // 
@@ -214,6 +210,7 @@
             this.poppySeedBtn.TabIndex = 7;
             this.poppySeedBtn.Text = "Poppy Seed";
             this.poppySeedBtn.UseVisualStyleBackColor = true;
+            this.poppySeedBtn.Click += new System.EventHandler(this.poppySeedBtn_Click);
             // 
             // asiagoBtn
             // 
@@ -224,6 +221,7 @@
             this.asiagoBtn.TabIndex = 6;
             this.asiagoBtn.Text = "Asiago";
             this.asiagoBtn.UseVisualStyleBackColor = true;
+            this.asiagoBtn.Click += new System.EventHandler(this.asiagoBtn_Click);
             // 
             // onionBtn
             // 
@@ -234,6 +232,7 @@
             this.onionBtn.TabIndex = 5;
             this.onionBtn.Text = "Onion";
             this.onionBtn.UseVisualStyleBackColor = true;
+            this.onionBtn.Click += new System.EventHandler(this.onionBtn_Click);
             // 
             // chocolateChipBtn
             // 
@@ -245,6 +244,7 @@
             this.chocolateChipBtn.TabIndex = 4;
             this.chocolateChipBtn.Text = "Chocolate Chip";
             this.chocolateChipBtn.UseVisualStyleBackColor = true;
+            this.chocolateChipBtn.Click += new System.EventHandler(this.chocolateChipBtn_Click);
             // 
             // blueberryBtn
             // 
@@ -255,6 +255,7 @@
             this.blueberryBtn.TabIndex = 3;
             this.blueberryBtn.Text = "Blueberry";
             this.blueberryBtn.UseVisualStyleBackColor = true;
+            this.blueberryBtn.Click += new System.EventHandler(this.blueberryBtn_Click);
             // 
             // everythingBtn
             // 
@@ -290,6 +291,7 @@
             this.extraLargeSizeBtn.TabIndex = 4;
             this.extraLargeSizeBtn.Text = "Extra-Large";
             this.extraLargeSizeBtn.UseVisualStyleBackColor = true;
+            this.extraLargeSizeBtn.Click += new System.EventHandler(this.extraLargeSizeBtn_Click);
             // 
             // largeSizeBtn
             // 
@@ -299,6 +301,7 @@
             this.largeSizeBtn.TabIndex = 3;
             this.largeSizeBtn.Text = "Large";
             this.largeSizeBtn.UseVisualStyleBackColor = true;
+            this.largeSizeBtn.Click += new System.EventHandler(this.largeSizeBtn_Click);
             // 
             // regularSizeBtn
             // 
@@ -308,6 +311,7 @@
             this.regularSizeBtn.TabIndex = 2;
             this.regularSizeBtn.Text = "Regular";
             this.regularSizeBtn.UseVisualStyleBackColor = true;
+            this.regularSizeBtn.Click += new System.EventHandler(this.regularSizeBtn_Click);
             // 
             // mediumSizeBtn
             // 
@@ -329,42 +333,12 @@
             this.smallSizeBtn.UseVisualStyleBackColor = true;
             this.smallSizeBtn.Click += new System.EventHandler(this.smallSizeBtn_Click);
             // 
-            // orderDetailsGroupBox
-            // 
-            this.orderDetailsGroupBox.Controls.Add(this.removeBtn);
-            this.orderDetailsGroupBox.Controls.Add(this.orderBtn);
-            this.orderDetailsGroupBox.Controls.Add(this.ItemGroupBox);
-            this.orderDetailsGroupBox.Controls.Add(this.quantityNumericUpDown);
-            this.orderDetailsGroupBox.Controls.Add(this.totalDisplayLabel);
-            this.orderDetailsGroupBox.Controls.Add(this.priceDisplayLabel);
-            this.orderDetailsGroupBox.Controls.Add(this.totalLabel);
-            this.orderDetailsGroupBox.Controls.Add(this.quantityLabel);
-            this.orderDetailsGroupBox.Controls.Add(this.priceLabel);
-            this.orderDetailsGroupBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orderDetailsGroupBox.Location = new System.Drawing.Point(27, 500);
-            this.orderDetailsGroupBox.Name = "orderDetailsGroupBox";
-            this.orderDetailsGroupBox.Size = new System.Drawing.Size(1199, 333);
-            this.orderDetailsGroupBox.TabIndex = 16;
-            this.orderDetailsGroupBox.TabStop = false;
-            this.orderDetailsGroupBox.Text = "Order Details";
-            // 
-            // removeBtn
-            // 
-            this.removeBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeBtn.Location = new System.Drawing.Point(804, 286);
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(216, 41);
-            this.removeBtn.TabIndex = 27;
-            this.removeBtn.Text = "&Remove Item";
-            this.btnToolTip.SetToolTip(this.removeBtn, "Press the remove Item button to delete selected item from cart.");
-            this.removeBtn.UseVisualStyleBackColor = true;
-            // 
             // orderBtn
             // 
             this.orderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
             this.orderBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.orderBtn.Location = new System.Drawing.Point(398, 229);
+            this.orderBtn.Location = new System.Drawing.Point(780, 681);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(216, 87);
             this.orderBtn.TabIndex = 26;
@@ -375,68 +349,36 @@
             // ItemGroupBox
             // 
             this.ItemGroupBox.FormattingEnabled = true;
-            this.ItemGroupBox.ItemHeight = 29;
-            this.ItemGroupBox.Location = new System.Drawing.Point(635, 33);
+            this.ItemGroupBox.ItemHeight = 25;
+            this.ItemGroupBox.Location = new System.Drawing.Point(12, 476);
             this.ItemGroupBox.Name = "ItemGroupBox";
-            this.ItemGroupBox.Size = new System.Drawing.Size(523, 236);
+            this.ItemGroupBox.Size = new System.Drawing.Size(523, 329);
             this.ItemGroupBox.TabIndex = 17;
-            // 
-            // quantityNumericUpDown
-            // 
-            this.quantityNumericUpDown.Location = new System.Drawing.Point(170, 117);
-            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
-            this.quantityNumericUpDown.Size = new System.Drawing.Size(120, 35);
-            this.quantityNumericUpDown.TabIndex = 23;
             // 
             // totalDisplayLabel
             // 
             this.totalDisplayLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.totalDisplayLabel.Location = new System.Drawing.Point(165, 175);
+            this.totalDisplayLabel.Location = new System.Drawing.Point(573, 520);
             this.totalDisplayLabel.Name = "totalDisplayLabel";
-            this.totalDisplayLabel.Size = new System.Drawing.Size(208, 37);
+            this.totalDisplayLabel.Size = new System.Drawing.Size(139, 123);
             this.totalDisplayLabel.TabIndex = 22;
-            // 
-            // priceDisplayLabel
-            // 
-            this.priceDisplayLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.priceDisplayLabel.Location = new System.Drawing.Point(165, 53);
-            this.priceDisplayLabel.Name = "priceDisplayLabel";
-            this.priceDisplayLabel.Size = new System.Drawing.Size(208, 37);
-            this.priceDisplayLabel.TabIndex = 21;
             // 
             // totalLabel
             // 
             this.totalLabel.AutoSize = true;
-            this.totalLabel.Location = new System.Drawing.Point(10, 175);
+            this.totalLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.Location = new System.Drawing.Point(594, 476);
             this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(69, 29);
+            this.totalLabel.Size = new System.Drawing.Size(93, 37);
             this.totalLabel.TabIndex = 20;
             this.totalLabel.Text = "Total";
-            // 
-            // quantityLabel
-            // 
-            this.quantityLabel.AutoSize = true;
-            this.quantityLabel.Location = new System.Drawing.Point(10, 119);
-            this.quantityLabel.Name = "quantityLabel";
-            this.quantityLabel.Size = new System.Drawing.Size(110, 29);
-            this.quantityLabel.TabIndex = 19;
-            this.quantityLabel.Text = "Quantity";
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.Location = new System.Drawing.Point(10, 61);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(71, 29);
-            this.priceLabel.TabIndex = 17;
-            this.priceLabel.Text = "Price";
             // 
             // clearBtn
             // 
             this.clearBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(662, 466);
+            this.clearBtn.Location = new System.Drawing.Point(780, 578);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(216, 41);
+            this.clearBtn.Size = new System.Drawing.Size(216, 87);
             this.clearBtn.TabIndex = 25;
             this.clearBtn.Text = "&Clear";
             this.btnToolTip.SetToolTip(this.clearBtn, "Press Clear button to take new order");
@@ -445,9 +387,9 @@
             // addToCartBtn
             // 
             this.addToCartBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartBtn.Location = new System.Drawing.Point(288, 466);
+            this.addToCartBtn.Location = new System.Drawing.Point(780, 476);
             this.addToCartBtn.Name = "addToCartBtn";
-            this.addToCartBtn.Size = new System.Drawing.Size(216, 41);
+            this.addToCartBtn.Size = new System.Drawing.Size(216, 87);
             this.addToCartBtn.TabIndex = 24;
             this.addToCartBtn.Text = "&Add to Cart";
             this.btnToolTip.SetToolTip(this.addToCartBtn, "Press the Add to Cart button, To add the chosen bagel to your cart");
@@ -594,38 +536,17 @@
             this.btnToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.btnToolTip.ToolTipTitle = "Info";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(1019, 467);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(165, 29);
-            this.radioButton1.TabIndex = 34;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.everythingBtn_Click);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(1393, 490);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(165, 29);
-            this.radioButton2.TabIndex = 35;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // MyBagelShopApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1659, 1281);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(1668, 1287);
+            this.Controls.Add(this.ItemGroupBox);
+            this.Controls.Add(this.orderBtn);
+            this.Controls.Add(this.totalDisplayLabel);
             this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.extraImagePictureBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.clearBtn);
@@ -633,7 +554,6 @@
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.stockDataBtn);
             this.Controls.Add(this.saleReportBtn);
-            this.Controls.Add(this.orderDetailsGroupBox);
             this.Controls.Add(this.sizeSelectGroupBox);
             this.Controls.Add(this.selectBagelgroupBox);
             this.Controls.Add(this.topPanel);
@@ -645,9 +565,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.selectBagelgroupBox.ResumeLayout(false);
             this.sizeSelectGroupBox.ResumeLayout(false);
-            this.orderDetailsGroupBox.ResumeLayout(false);
-            this.orderDetailsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
             this.searchTrxGroupBox.ResumeLayout(false);
             this.searchTrxGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.extraImagePictureBox)).EndInit();
@@ -680,17 +597,11 @@
         private System.Windows.Forms.Button regularSizeBtn;
         private System.Windows.Forms.Button mediumSizeBtn;
         private System.Windows.Forms.Button smallSizeBtn;
-        private System.Windows.Forms.GroupBox orderDetailsGroupBox;
         private System.Windows.Forms.Button orderBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button addToCartBtn;
-        private System.Windows.Forms.NumericUpDown quantityNumericUpDown;
         private System.Windows.Forms.Label totalDisplayLabel;
-        private System.Windows.Forms.Label priceDisplayLabel;
         private System.Windows.Forms.Label totalLabel;
-        private System.Windows.Forms.Label quantityLabel;
-        private System.Windows.Forms.Label priceLabel;
-        private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button saleReportBtn;
         private System.Windows.Forms.Button stockDataBtn;
         private System.Windows.Forms.GroupBox searchTrxGroupBox;
@@ -706,8 +617,6 @@
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ToolTip btnToolTip;
         private System.Windows.Forms.ListBox ItemGroupBox;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
 
