@@ -60,23 +60,16 @@
             this.addToCartBtn = new System.Windows.Forms.Button();
             this.saleReportBtn = new System.Windows.Forms.Button();
             this.stockDataBtn = new System.Windows.Forms.Button();
-            this.searchTrxGroupBox = new System.Windows.Forms.GroupBox();
-            this.clearSearchBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.searchInputTextBox = new System.Windows.Forms.TextBox();
-            this.transactionNoRadioButton = new System.Windows.Forms.RadioButton();
-            this.dateRadioButton = new System.Windows.Forms.RadioButton();
-            this.searchResultLabel = new System.Windows.Forms.Label();
-            this.searchResultListBox = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.extraImagePictureBox = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.btnToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.selectBagelgroupBox.SuspendLayout();
             this.sizeSelectGroupBox.SuspendLayout();
-            this.searchTrxGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.extraImagePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,9 +97,9 @@
             // wholeWheatBtn
             // 
             this.wholeWheatBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wholeWheatBtn.Location = new System.Drawing.Point(15, 34);
+            this.wholeWheatBtn.Location = new System.Drawing.Point(6, 34);
             this.wholeWheatBtn.Name = "wholeWheatBtn";
-            this.wholeWheatBtn.Size = new System.Drawing.Size(149, 116);
+            this.wholeWheatBtn.Size = new System.Drawing.Size(148, 100);
             this.wholeWheatBtn.TabIndex = 1;
             this.wholeWheatBtn.Text = "Whole Wheat";
             this.wholeWheatBtn.UseVisualStyleBackColor = true;
@@ -130,7 +123,7 @@
             this.selectBagelgroupBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectBagelgroupBox.Location = new System.Drawing.Point(12, 148);
             this.selectBagelgroupBox.Name = "selectBagelgroupBox";
-            this.selectBagelgroupBox.Size = new System.Drawing.Size(1109, 312);
+            this.selectBagelgroupBox.Size = new System.Drawing.Size(1024, 276);
             this.selectBagelgroupBox.TabIndex = 14;
             this.selectBagelgroupBox.TabStop = false;
             this.selectBagelgroupBox.Text = "Select Bagel";
@@ -138,9 +131,9 @@
             // saltBtn
             // 
             this.saltBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saltBtn.Location = new System.Drawing.Point(945, 100);
+            this.saltBtn.Location = new System.Drawing.Point(861, 90);
             this.saltBtn.Name = "saltBtn";
-            this.saltBtn.Size = new System.Drawing.Size(149, 116);
+            this.saltBtn.Size = new System.Drawing.Size(135, 100);
             this.saltBtn.TabIndex = 13;
             this.saltBtn.Text = "Salt";
             this.saltBtn.UseVisualStyleBackColor = true;
@@ -149,9 +142,9 @@
             // cheddarBtn
             // 
             this.cheddarBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cheddarBtn.Location = new System.Drawing.Point(790, 156);
+            this.cheddarBtn.Location = new System.Drawing.Point(720, 156);
             this.cheddarBtn.Name = "cheddarBtn";
-            this.cheddarBtn.Size = new System.Drawing.Size(149, 116);
+            this.cheddarBtn.Size = new System.Drawing.Size(135, 100);
             this.cheddarBtn.TabIndex = 12;
             this.cheddarBtn.Text = "Cheddar";
             this.cheddarBtn.UseVisualStyleBackColor = true;
@@ -160,9 +153,9 @@
             // sesameBtn
             // 
             this.sesameBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sesameBtn.Location = new System.Drawing.Point(635, 156);
+            this.sesameBtn.Location = new System.Drawing.Point(579, 156);
             this.sesameBtn.Name = "sesameBtn";
-            this.sesameBtn.Size = new System.Drawing.Size(149, 116);
+            this.sesameBtn.Size = new System.Drawing.Size(135, 100);
             this.sesameBtn.TabIndex = 11;
             this.sesameBtn.Text = "Sesame";
             this.sesameBtn.UseVisualStyleBackColor = true;
@@ -171,9 +164,9 @@
             // garlicBtn
             // 
             this.garlicBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.garlicBtn.Location = new System.Drawing.Point(480, 156);
+            this.garlicBtn.Location = new System.Drawing.Point(438, 156);
             this.garlicBtn.Name = "garlicBtn";
-            this.garlicBtn.Size = new System.Drawing.Size(149, 116);
+            this.garlicBtn.Size = new System.Drawing.Size(135, 100);
             this.garlicBtn.TabIndex = 10;
             this.garlicBtn.Text = "Garlic";
             this.garlicBtn.UseVisualStyleBackColor = true;
@@ -182,9 +175,9 @@
             // eggBtn
             // 
             this.eggBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eggBtn.Location = new System.Drawing.Point(325, 156);
+            this.eggBtn.Location = new System.Drawing.Point(297, 156);
             this.eggBtn.Name = "eggBtn";
-            this.eggBtn.Size = new System.Drawing.Size(149, 116);
+            this.eggBtn.Size = new System.Drawing.Size(135, 100);
             this.eggBtn.TabIndex = 9;
             this.eggBtn.Text = "Egg";
             this.eggBtn.UseVisualStyleBackColor = true;
@@ -193,9 +186,9 @@
             // frenchToastBtn
             // 
             this.frenchToastBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frenchToastBtn.Location = new System.Drawing.Point(170, 156);
+            this.frenchToastBtn.Location = new System.Drawing.Point(156, 156);
             this.frenchToastBtn.Name = "frenchToastBtn";
-            this.frenchToastBtn.Size = new System.Drawing.Size(149, 116);
+            this.frenchToastBtn.Size = new System.Drawing.Size(135, 100);
             this.frenchToastBtn.TabIndex = 8;
             this.frenchToastBtn.Text = "French Toast";
             this.frenchToastBtn.UseVisualStyleBackColor = true;
@@ -206,7 +199,7 @@
             this.poppySeedBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.poppySeedBtn.Location = new System.Drawing.Point(15, 156);
             this.poppySeedBtn.Name = "poppySeedBtn";
-            this.poppySeedBtn.Size = new System.Drawing.Size(149, 116);
+            this.poppySeedBtn.Size = new System.Drawing.Size(135, 100);
             this.poppySeedBtn.TabIndex = 7;
             this.poppySeedBtn.Text = "Poppy Seed";
             this.poppySeedBtn.UseVisualStyleBackColor = true;
@@ -215,9 +208,9 @@
             // asiagoBtn
             // 
             this.asiagoBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asiagoBtn.Location = new System.Drawing.Point(790, 34);
+            this.asiagoBtn.Location = new System.Drawing.Point(720, 34);
             this.asiagoBtn.Name = "asiagoBtn";
-            this.asiagoBtn.Size = new System.Drawing.Size(149, 116);
+            this.asiagoBtn.Size = new System.Drawing.Size(135, 100);
             this.asiagoBtn.TabIndex = 6;
             this.asiagoBtn.Text = "Asiago";
             this.asiagoBtn.UseVisualStyleBackColor = true;
@@ -226,9 +219,9 @@
             // onionBtn
             // 
             this.onionBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onionBtn.Location = new System.Drawing.Point(635, 34);
+            this.onionBtn.Location = new System.Drawing.Point(579, 34);
             this.onionBtn.Name = "onionBtn";
-            this.onionBtn.Size = new System.Drawing.Size(149, 116);
+            this.onionBtn.Size = new System.Drawing.Size(135, 100);
             this.onionBtn.TabIndex = 5;
             this.onionBtn.Text = "Onion";
             this.onionBtn.UseVisualStyleBackColor = true;
@@ -237,10 +230,10 @@
             // chocolateChipBtn
             // 
             this.chocolateChipBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chocolateChipBtn.Location = new System.Drawing.Point(480, 34);
+            this.chocolateChipBtn.Location = new System.Drawing.Point(438, 34);
             this.chocolateChipBtn.Name = "chocolateChipBtn";
             this.chocolateChipBtn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.chocolateChipBtn.Size = new System.Drawing.Size(149, 116);
+            this.chocolateChipBtn.Size = new System.Drawing.Size(144, 100);
             this.chocolateChipBtn.TabIndex = 4;
             this.chocolateChipBtn.Text = "Chocolate Chip";
             this.chocolateChipBtn.UseVisualStyleBackColor = true;
@@ -249,9 +242,9 @@
             // blueberryBtn
             // 
             this.blueberryBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueberryBtn.Location = new System.Drawing.Point(325, 34);
+            this.blueberryBtn.Location = new System.Drawing.Point(297, 34);
             this.blueberryBtn.Name = "blueberryBtn";
-            this.blueberryBtn.Size = new System.Drawing.Size(149, 116);
+            this.blueberryBtn.Size = new System.Drawing.Size(146, 100);
             this.blueberryBtn.TabIndex = 3;
             this.blueberryBtn.Text = "Blueberry";
             this.blueberryBtn.UseVisualStyleBackColor = true;
@@ -260,9 +253,9 @@
             // everythingBtn
             // 
             this.everythingBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.everythingBtn.Location = new System.Drawing.Point(170, 34);
+            this.everythingBtn.Location = new System.Drawing.Point(156, 34);
             this.everythingBtn.Name = "everythingBtn";
-            this.everythingBtn.Size = new System.Drawing.Size(149, 116);
+            this.everythingBtn.Size = new System.Drawing.Size(148, 100);
             this.everythingBtn.TabIndex = 2;
             this.everythingBtn.Text = "Everything";
             this.everythingBtn.UseVisualStyleBackColor = true;
@@ -276,16 +269,16 @@
             this.sizeSelectGroupBox.Controls.Add(this.mediumSizeBtn);
             this.sizeSelectGroupBox.Controls.Add(this.smallSizeBtn);
             this.sizeSelectGroupBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sizeSelectGroupBox.Location = new System.Drawing.Point(1141, 165);
+            this.sizeSelectGroupBox.Location = new System.Drawing.Point(1042, 160);
             this.sizeSelectGroupBox.Name = "sizeSelectGroupBox";
-            this.sizeSelectGroupBox.Size = new System.Drawing.Size(487, 295);
+            this.sizeSelectGroupBox.Size = new System.Drawing.Size(487, 264);
             this.sizeSelectGroupBox.TabIndex = 15;
             this.sizeSelectGroupBox.TabStop = false;
             this.sizeSelectGroupBox.Text = "Select Size";
             // 
             // extraLargeSizeBtn
             // 
-            this.extraLargeSizeBtn.Location = new System.Drawing.Point(152, 221);
+            this.extraLargeSizeBtn.Location = new System.Drawing.Point(142, 190);
             this.extraLargeSizeBtn.Name = "extraLargeSizeBtn";
             this.extraLargeSizeBtn.Size = new System.Drawing.Size(182, 68);
             this.extraLargeSizeBtn.TabIndex = 4;
@@ -295,7 +288,7 @@
             // 
             // largeSizeBtn
             // 
-            this.largeSizeBtn.Location = new System.Drawing.Point(252, 139);
+            this.largeSizeBtn.Location = new System.Drawing.Point(252, 110);
             this.largeSizeBtn.Name = "largeSizeBtn";
             this.largeSizeBtn.Size = new System.Drawing.Size(182, 68);
             this.largeSizeBtn.TabIndex = 3;
@@ -305,7 +298,7 @@
             // 
             // regularSizeBtn
             // 
-            this.regularSizeBtn.Location = new System.Drawing.Point(26, 139);
+            this.regularSizeBtn.Location = new System.Drawing.Point(26, 110);
             this.regularSizeBtn.Name = "regularSizeBtn";
             this.regularSizeBtn.Size = new System.Drawing.Size(182, 68);
             this.regularSizeBtn.TabIndex = 2;
@@ -315,7 +308,7 @@
             // 
             // mediumSizeBtn
             // 
-            this.mediumSizeBtn.Location = new System.Drawing.Point(252, 48);
+            this.mediumSizeBtn.Location = new System.Drawing.Point(252, 34);
             this.mediumSizeBtn.Name = "mediumSizeBtn";
             this.mediumSizeBtn.Size = new System.Drawing.Size(182, 68);
             this.mediumSizeBtn.TabIndex = 1;
@@ -325,7 +318,7 @@
             // 
             // smallSizeBtn
             // 
-            this.smallSizeBtn.Location = new System.Drawing.Point(26, 48);
+            this.smallSizeBtn.Location = new System.Drawing.Point(26, 34);
             this.smallSizeBtn.Name = "smallSizeBtn";
             this.smallSizeBtn.Size = new System.Drawing.Size(182, 68);
             this.smallSizeBtn.TabIndex = 0;
@@ -338,19 +331,20 @@
             this.orderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
             this.orderBtn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.orderBtn.Location = new System.Drawing.Point(780, 681);
+            this.orderBtn.Location = new System.Drawing.Point(780, 703);
             this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(216, 87);
+            this.orderBtn.Size = new System.Drawing.Size(216, 65);
             this.orderBtn.TabIndex = 26;
             this.orderBtn.Text = "&Order";
             this.btnToolTip.SetToolTip(this.orderBtn, "Press the order button To place an order & checkout");
             this.orderBtn.UseVisualStyleBackColor = false;
+            this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
             // ItemGroupBox
             // 
             this.ItemGroupBox.FormattingEnabled = true;
             this.ItemGroupBox.ItemHeight = 25;
-            this.ItemGroupBox.Location = new System.Drawing.Point(12, 476);
+            this.ItemGroupBox.Location = new System.Drawing.Point(12, 507);
             this.ItemGroupBox.Name = "ItemGroupBox";
             this.ItemGroupBox.Size = new System.Drawing.Size(523, 329);
             this.ItemGroupBox.TabIndex = 17;
@@ -358,10 +352,12 @@
             // totalDisplayLabel
             // 
             this.totalDisplayLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.totalDisplayLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalDisplayLabel.Location = new System.Drawing.Point(573, 520);
             this.totalDisplayLabel.Name = "totalDisplayLabel";
             this.totalDisplayLabel.Size = new System.Drawing.Size(139, 123);
             this.totalDisplayLabel.TabIndex = 22;
+            this.totalDisplayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // totalLabel
             // 
@@ -376,20 +372,21 @@
             // clearBtn
             // 
             this.clearBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(780, 578);
+            this.clearBtn.Location = new System.Drawing.Point(780, 600);
             this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(216, 87);
+            this.clearBtn.Size = new System.Drawing.Size(216, 65);
             this.clearBtn.TabIndex = 25;
             this.clearBtn.Text = "&Clear";
             this.btnToolTip.SetToolTip(this.clearBtn, "Press Clear button to take new order");
             this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // addToCartBtn
             // 
             this.addToCartBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartBtn.Location = new System.Drawing.Point(780, 476);
+            this.addToCartBtn.Location = new System.Drawing.Point(780, 487);
             this.addToCartBtn.Name = "addToCartBtn";
-            this.addToCartBtn.Size = new System.Drawing.Size(216, 87);
+            this.addToCartBtn.Size = new System.Drawing.Size(216, 65);
             this.addToCartBtn.TabIndex = 24;
             this.addToCartBtn.Text = "&Add to Cart";
             this.btnToolTip.SetToolTip(this.addToCartBtn, "Press the Add to Cart button, To add the chosen bagel to your cart");
@@ -399,7 +396,7 @@
             // saleReportBtn
             // 
             this.saleReportBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saleReportBtn.Location = new System.Drawing.Point(1347, 578);
+            this.saleReportBtn.Location = new System.Drawing.Point(1106, 600);
             this.saleReportBtn.Name = "saleReportBtn";
             this.saleReportBtn.Size = new System.Drawing.Size(216, 65);
             this.saleReportBtn.TabIndex = 28;
@@ -410,7 +407,7 @@
             // stockDataBtn
             // 
             this.stockDataBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockDataBtn.Location = new System.Drawing.Point(1347, 681);
+            this.stockDataBtn.Location = new System.Drawing.Point(1106, 703);
             this.stockDataBtn.Name = "stockDataBtn";
             this.stockDataBtn.Size = new System.Drawing.Size(216, 65);
             this.stockDataBtn.TabIndex = 29;
@@ -418,102 +415,30 @@
             this.btnToolTip.SetToolTip(this.stockDataBtn, "Press the Stock Data button to check pending stock. ");
             this.stockDataBtn.UseVisualStyleBackColor = true;
             // 
-            // searchTrxGroupBox
-            // 
-            this.searchTrxGroupBox.Controls.Add(this.clearSearchBtn);
-            this.searchTrxGroupBox.Controls.Add(this.searchBtn);
-            this.searchTrxGroupBox.Controls.Add(this.searchInputTextBox);
-            this.searchTrxGroupBox.Controls.Add(this.transactionNoRadioButton);
-            this.searchTrxGroupBox.Controls.Add(this.dateRadioButton);
-            this.searchTrxGroupBox.Controls.Add(this.searchResultLabel);
-            this.searchTrxGroupBox.Controls.Add(this.searchResultListBox);
-            this.searchTrxGroupBox.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTrxGroupBox.Location = new System.Drawing.Point(27, 848);
-            this.searchTrxGroupBox.Name = "searchTrxGroupBox";
-            this.searchTrxGroupBox.Size = new System.Drawing.Size(1199, 376);
-            this.searchTrxGroupBox.TabIndex = 30;
-            this.searchTrxGroupBox.TabStop = false;
-            this.searchTrxGroupBox.Text = "Search transactions";
-            // 
-            // clearSearchBtn
-            // 
-            this.clearSearchBtn.Location = new System.Drawing.Point(62, 305);
-            this.clearSearchBtn.Name = "clearSearchBtn";
-            this.clearSearchBtn.Size = new System.Drawing.Size(143, 41);
-            this.clearSearchBtn.TabIndex = 33;
-            this.clearSearchBtn.Text = "&Clear";
-            this.btnToolTip.SetToolTip(this.clearSearchBtn, "Press Clear Button to Search new transaction.");
-            this.clearSearchBtn.UseVisualStyleBackColor = true;
-            // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(62, 251);
+            this.searchBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(1106, 487);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(143, 41);
+            this.searchBtn.Size = new System.Drawing.Size(216, 65);
             this.searchBtn.TabIndex = 28;
             this.searchBtn.Text = "S&earch";
             this.btnToolTip.SetToolTip(this.searchBtn, "Press the Search Button to find Transactions.");
             this.searchBtn.UseVisualStyleBackColor = true;
-            // 
-            // searchInputTextBox
-            // 
-            this.searchInputTextBox.Location = new System.Drawing.Point(31, 187);
-            this.searchInputTextBox.Name = "searchInputTextBox";
-            this.searchInputTextBox.Size = new System.Drawing.Size(218, 35);
-            this.searchInputTextBox.TabIndex = 32;
-            // 
-            // transactionNoRadioButton
-            // 
-            this.transactionNoRadioButton.AutoSize = true;
-            this.transactionNoRadioButton.Location = new System.Drawing.Point(31, 118);
-            this.transactionNoRadioButton.Name = "transactionNoRadioButton";
-            this.transactionNoRadioButton.Size = new System.Drawing.Size(218, 33);
-            this.transactionNoRadioButton.TabIndex = 31;
-            this.transactionNoRadioButton.TabStop = true;
-            this.transactionNoRadioButton.Text = "Transaction No";
-            this.transactionNoRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // dateRadioButton
-            // 
-            this.dateRadioButton.AutoSize = true;
-            this.dateRadioButton.Location = new System.Drawing.Point(31, 65);
-            this.dateRadioButton.Name = "dateRadioButton";
-            this.dateRadioButton.Size = new System.Drawing.Size(270, 33);
-            this.dateRadioButton.TabIndex = 30;
-            this.dateRadioButton.TabStop = true;
-            this.dateRadioButton.Text = "Date (MM-DD-YYYY)";
-            this.dateRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // searchResultLabel
-            // 
-            this.searchResultLabel.AutoSize = true;
-            this.searchResultLabel.Location = new System.Drawing.Point(775, 20);
-            this.searchResultLabel.Name = "searchResultLabel";
-            this.searchResultLabel.Size = new System.Drawing.Size(99, 29);
-            this.searchResultLabel.TabIndex = 29;
-            this.searchResultLabel.Text = "Results";
-            // 
-            // searchResultListBox
-            // 
-            this.searchResultListBox.FormattingEnabled = true;
-            this.searchResultListBox.ItemHeight = 29;
-            this.searchResultListBox.Location = new System.Drawing.Point(635, 52);
-            this.searchResultListBox.Name = "searchResultListBox";
-            this.searchResultListBox.Size = new System.Drawing.Size(523, 294);
-            this.searchResultListBox.TabIndex = 28;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(31)))), ((int)(((byte)(101)))));
-            this.panel1.Location = new System.Drawing.Point(1282, 490);
+            this.panel1.Location = new System.Drawing.Point(1049, 485);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(13, 700);
+            this.panel1.Size = new System.Drawing.Size(13, 283);
             this.panel1.TabIndex = 31;
             // 
             // extraImagePictureBox
             // 
             this.extraImagePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("extraImagePictureBox.Image")));
-            this.extraImagePictureBox.Location = new System.Drawing.Point(1347, 866);
+            this.extraImagePictureBox.Location = new System.Drawing.Point(1393, 525);
             this.extraImagePictureBox.Name = "extraImagePictureBox";
             this.extraImagePictureBox.Size = new System.Drawing.Size(235, 243);
             this.extraImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -523,7 +448,7 @@
             // exitBtn
             // 
             this.exitBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(1412, 1204);
+            this.exitBtn.Location = new System.Drawing.Point(1403, 797);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(216, 65);
             this.exitBtn.TabIndex = 33;
@@ -536,13 +461,22 @@
             this.btnToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.btnToolTip.ToolTipTitle = "Info";
             // 
+            // qtyTextBox
+            // 
+            this.qtyTextBox.Location = new System.Drawing.Point(189, 448);
+            this.qtyTextBox.Name = "qtyTextBox";
+            this.qtyTextBox.Size = new System.Drawing.Size(100, 31);
+            this.qtyTextBox.TabIndex = 34;
+            // 
             // MyBagelShopApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1668, 1287);
+            this.ClientSize = new System.Drawing.Size(1668, 892);
+            this.Controls.Add(this.qtyTextBox);
             this.Controls.Add(this.ItemGroupBox);
+            this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.orderBtn);
             this.Controls.Add(this.totalDisplayLabel);
             this.Controls.Add(this.exitBtn);
@@ -550,7 +484,6 @@
             this.Controls.Add(this.extraImagePictureBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.clearBtn);
-            this.Controls.Add(this.searchTrxGroupBox);
             this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.stockDataBtn);
             this.Controls.Add(this.saleReportBtn);
@@ -565,8 +498,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.selectBagelgroupBox.ResumeLayout(false);
             this.sizeSelectGroupBox.ResumeLayout(false);
-            this.searchTrxGroupBox.ResumeLayout(false);
-            this.searchTrxGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.extraImagePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -604,19 +535,13 @@
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button saleReportBtn;
         private System.Windows.Forms.Button stockDataBtn;
-        private System.Windows.Forms.GroupBox searchTrxGroupBox;
-        private System.Windows.Forms.Label searchResultLabel;
-        private System.Windows.Forms.ListBox searchResultListBox;
-        private System.Windows.Forms.Button clearSearchBtn;
         private System.Windows.Forms.Button searchBtn;
-        private System.Windows.Forms.TextBox searchInputTextBox;
-        private System.Windows.Forms.RadioButton transactionNoRadioButton;
-        private System.Windows.Forms.RadioButton dateRadioButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox extraImagePictureBox;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.ToolTip btnToolTip;
         private System.Windows.Forms.ListBox ItemGroupBox;
+        private System.Windows.Forms.TextBox qtyTextBox;
     }
 }
 

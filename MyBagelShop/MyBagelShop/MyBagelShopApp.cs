@@ -17,6 +17,12 @@ namespace MyBagelShop
     
     public partial class MyBagelShopApp : Form
     {
+        public class qytValidity : Exception
+        {
+            public qytValidity(string message) : base(message)
+            {
+            }
+        }
         IDictionary<string, decimal> bagelPricesDict = new Dictionary<string, decimal>();
         public MyBagelShopApp()
         {
@@ -143,6 +149,7 @@ namespace MyBagelShop
                     bagelPricesDict.Add("Cheddar Extra-Large", Convert.ToDecimal(individualPrices[4]));
                 }
                 
+                
 
                 counter++;
             }
@@ -160,123 +167,454 @@ namespace MyBagelShop
 
         private static String[] BeagelNames = { "Whole Wheat", "Everything", "Insert", "Blueberry", "Chocolate Chip", "Onion", "Asiago", "Salt", "Poppy Seed", "French Toast", "Egg", "Garlic", "Sesame", "Cheddar" };
         const string PriceFilePath = "PriceListBagel.txt";
+        const string TrxRecord = "Transactions.txt";
+        int trxNo = 0;
         
 
-        
+
+
 
         private void wholeWheatBtn_Click(object sender, EventArgs e)
         {
+            everythingBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
             button1Clicked = true;
+            wholeWheatBtn.BackColor=Color.Cyan;
+            
+
             bagelType = "Whole Wheat";
+
+
+            
+            //button1Clicked = false;
+            //wholeWheatBtn.BackColor=DefaultBackColor;
+            //wholeWheatBtn.Enabled = false;
         }
         private void everythingBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
             button1Clicked = true;
+            everythingBtn.BackColor=Color.Cyan;
+            
+
             bagelType = "Everything";
         }
         private void blueberryBtn_Click(object sender, EventArgs e)
         {
 
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            blueberryBtn.BackColor=Color.Cyan;
             bagelType = "Blueberry";
 
         }
         private void chocolateChipBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
             button1Clicked = true;
+            chocolateChipBtn.BackColor=Color.Cyan;
             bagelType = "Chocolate Chip";
         }
         private void cheddarBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            cheddarBtn.BackColor=Color.Cyan;
             bagelType = "Cheddar"; 
         }
         private void asiagoBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            asiagoBtn.BackColor=Color.Cyan;
             bagelType = "Asiago";
 
         }
         private void saltBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            saltBtn.BackColor=Color.Cyan;
             bagelType = "Salt";
 
         }
         private void poppySeedBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            poppySeedBtn.BackColor=Color.Cyan;
             bagelType = "Poppy Seed";
 
         }
         private void frenchToastBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            frenchToastBtn.BackColor=Color.Cyan;
             bagelType = "French Toast";
         }
         private void eggBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            eggBtn.BackColor=Color.Cyan;
             bagelType = "Egg";
         }
         private void garlicBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            garlicBtn.BackColor=Color.Cyan;
             bagelType = "Garlic";
         }
         private void sesameBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            sesameBtn.BackColor=Color.Cyan;
             bagelType = "Sesame";
         }
         private void onionBtn_Click(object sender, EventArgs e)
         {
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
             button1Clicked = true;
+            onionBtn.BackColor=Color.Cyan;
             bagelType = "Onion";
         }
         private void smallSizeBtn_Click(object sender, EventArgs e)
         {
+            mediumSizeBtn.BackColor=Color.White;
+            regularSizeBtn.BackColor=Color.White;
+            largeSizeBtn.BackColor=Color.White;
+            extraLargeSizeBtn.BackColor=Color.White;
             button2Clicked = true;
+            smallSizeBtn.BackColor=Color.Yellow;
             bagelSize = "Small";
         }
         private void mediumSizeBtn_Click(object sender, EventArgs e)
         {
+            smallSizeBtn.BackColor=Color.White;
+            regularSizeBtn.BackColor=Color.White;
+            largeSizeBtn.BackColor=Color.White;
+            extraLargeSizeBtn.BackColor=Color.White;
             button2Clicked = true;
+            mediumSizeBtn.BackColor=Color.Yellow;
             bagelSize = "Medium";
         }
         private void regularSizeBtn_Click(object sender, EventArgs e)
         {
+            smallSizeBtn.BackColor=Color.White;
+            regularSizeBtn.BackColor=Color.White;
+            largeSizeBtn.BackColor=Color.White;
+            extraLargeSizeBtn.BackColor=Color.White;
             button2Clicked = true;
+            regularSizeBtn.BackColor=Color.Yellow;
             bagelSize = "Regular";
 
         }
         private void largeSizeBtn_Click(object sender, EventArgs e)
         {
+            mediumSizeBtn.BackColor=Color.White;
+            regularSizeBtn.BackColor=Color.White;
+            smallSizeBtn.BackColor=Color.White;
+            extraLargeSizeBtn.BackColor=Color.White;
             button2Clicked = true;
+            largeSizeBtn.BackColor=Color.Yellow;
             bagelSize = "Large";
 
         }
         private void extraLargeSizeBtn_Click(object sender, EventArgs e)
         {
+            mediumSizeBtn.BackColor=Color.White;
+            regularSizeBtn.BackColor=Color.White;
+            largeSizeBtn.BackColor=Color.White;
+            smallSizeBtn.BackColor=Color.White;
             button2Clicked = true;
+            extraLargeSizeBtn.BackColor=Color.Yellow;
             bagelSize = "Extra-Large";
 
         }
 
+        private string getRandomTransactionNo()
+        {
+            string transactionNo;
+            //int x = 0;
+            Random random = new Random();
+            do
+            {
+                return random.Next(10000, 100000).ToString();
+            }
+            while (!alreadyrecord(transactionNo));
 
+        }
+        private bool alreadyrecord(string NUM)
+        {
+            bool found = false;
+            return found;
+        }
         private void addToCartBtn_Click(object sender, EventArgs e)
         {
-            if (button1Clicked == true && button2Clicked == true)
-            {
-                fetchBagelPrice = bagelType + " " + bagelSize;
-                decimal bagelPrice = bagelPricesDict[fetchBagelPrice];
-                totalPrice += bagelPricesDict[fetchBagelPrice];
-                Console.WriteLine(totalPrice);
+            //if (button1Clicked == true && button2Clicked == true)
+            //{
+            //    fetchBagelPrice = bagelType + " " + bagelSize;
+            //    decimal bagelPrice = bagelPricesDict[fetchBagelPrice];
+            //    totalPrice += bagelPricesDict[fetchBagelPrice];
+            //    Console.WriteLine(totalPrice);
 
-                ItemGroupBox.Items.Add(bagelType + ", " + bagelSize + ", " + bagelPrice.ToString("C2"));
+            //    ItemGroupBox.Items.Add(bagelType + ", " + bagelSize + ", " + bagelPrice.ToString("C2"));
+            //}
+            //else
+            //{
+            //    MessageBox.Show("show");
+            //}
+            if (button1Clicked == true )
+            {
+                if (button2Clicked == true)
+
+                {
+                    
+                    
+                    fetchBagelPrice = bagelType + " " + bagelSize;
+
+                    decimal bagelPrice = bagelPricesDict[fetchBagelPrice];
+                    totalPrice += bagelPricesDict[fetchBagelPrice];
+                    Console.WriteLine(totalPrice);
+                    ItemGroupBox.Items.Add(bagelType + ", " + bagelSize + ", " + bagelPrice.ToString("C2"));
+
+                    totalDisplayLabel.Text=totalPrice.ToString("C2");
+                    wholeWheatBtn.BackColor=Color.White;
+                    chocolateChipBtn.BackColor=Color.White;
+                    blueberryBtn.BackColor=Color.White;
+                    asiagoBtn.BackColor=Color.White;
+                    saltBtn.BackColor=Color.White;
+                    poppySeedBtn.BackColor=Color.White;
+                    frenchToastBtn.BackColor=Color.White;
+                    eggBtn.BackColor=Color.White;
+                    garlicBtn.BackColor=Color.White;
+                    sesameBtn.BackColor=Color.White;
+                    cheddarBtn.BackColor=Color.White;
+                    everythingBtn.BackColor=Color.White;
+                    onionBtn.BackColor=Color.White;
+                    mediumSizeBtn.BackColor=Color.White;
+                    regularSizeBtn.BackColor=Color.White;
+                    largeSizeBtn.BackColor=Color.White;
+                    smallSizeBtn.BackColor=Color.White;
+                    extraLargeSizeBtn.BackColor=Color.White;
+
+
+
+                    
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Please Select Size");
+                }
+
             }
+            else
+            {
+                MessageBox.Show("Please Select Bagel Type");
+            }
+
+            
+            
+            
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            ItemGroupBox.Items.Clear();
+            totalDisplayLabel.Text="";
+            totalPrice=0;
+            wholeWheatBtn.BackColor=Color.White;
+            chocolateChipBtn.BackColor=Color.White;
+            blueberryBtn.BackColor=Color.White;
+            asiagoBtn.BackColor=Color.White;
+            saltBtn.BackColor=Color.White;
+            poppySeedBtn.BackColor=Color.White;
+            frenchToastBtn.BackColor=Color.White;
+            eggBtn.BackColor=Color.White;
+            garlicBtn.BackColor=Color.White;
+            sesameBtn.BackColor=Color.White;
+            cheddarBtn.BackColor=Color.White;
+            everythingBtn.BackColor=Color.White;
+            onionBtn.BackColor=Color.White;
+            mediumSizeBtn.BackColor=Color.White;
+            regularSizeBtn.BackColor=Color.White;
+            largeSizeBtn.BackColor=Color.White;
+            smallSizeBtn.BackColor=Color.White;
+            extraLargeSizeBtn.BackColor=Color.White;
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            searchTrx Search = new searchTrx();
+            Search.Show();
         }
 
         
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            DateTime DT = DateTime.Now;
+            StreamWriter write = File.AppendText(TrxRecord);
+            using (write)
+            {
+                write.WriteLine(getRandomTransactionNo()+DT+bagelType+bagelSize);
+                write.WriteLine(ItemGroupBox.Items.ToString()); 
+                //write.WriteLine(bagelType);
+                //write.WriteLine(bagelSize);
+                //write.WriteLine(phoneNumberTextBox.Text);// Storing the Phone Number
+                //write.WriteLine(investmentAmountTextBox.Text);// Storing the investment amount
+                //write.WriteLine(emiSwitch); // Storing the EMI 
+                //write.WriteLine(yearSwitch*12); // Storing the Year of loan
+                //write.WriteLine(totalRepaymentsSwitch);// Storing the Total Repayments
+                //write.WriteLine(rate); // Storing the Interest
+
+            }
+        }
     }
 }

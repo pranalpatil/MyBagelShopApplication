@@ -9,3 +9,4 @@
 \\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.csproj.CoreCompileInputs.cache
 \\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.exe
 \\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.pdb
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.searchTrx.resources

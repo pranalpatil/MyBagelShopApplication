@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{099D2A50-686D-4B4E-B4DF-1F59E2FDF37C}</ProjectGuid>
+    <ProjectGuid>{2B7002AF-43AD-4401-B302-93CF05025A4E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MyBagelShop</RootNamespace>
     <AssemblyName>MyBagelShop</AssemblyName>
@@ -54,11 +54,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="searchTrx.cs">
+    <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchTrx.Designer.cs">
-      <DependentUpon>searchTrx.cs</DependentUpon>
+    <Compile Include="SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MyBagelShopApp.resx">
       <DependentUpon>MyBagelShopApp.cs</DependentUpon>
@@ -72,8 +72,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="searchTrx.resx">
-      <DependentUpon>searchTrx.cs</DependentUpon>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
