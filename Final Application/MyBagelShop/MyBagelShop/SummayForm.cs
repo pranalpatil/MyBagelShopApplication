@@ -24,7 +24,10 @@ namespace MyBagelShop
 
         private void SummayForm_Load(object sender, EventArgs e)
         {
-            
+            totalBagelDisplaylabel.Text= MyBagelShopApp.BagelOverall.ToString();
+            TotalSaleDisplayLabel.Text= MyBagelShopApp.tempTotalPrice.ToString("C");
+            totalTransactionDisplayLabel.Text= MyBagelShopApp.Count.ToString();
+            AverageDisplayLabel.Text= MyBagelShopApp.avgOverall.ToString("C");
         }
     }
 }

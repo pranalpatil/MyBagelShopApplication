@@ -267,6 +267,7 @@
             this.summaryBtn.TabIndex = 18;
             this.summaryBtn.Text = "Su&mmary";
             this.summaryBtn.UseVisualStyleBackColor = true;
+            this.summaryBtn.Click += new System.EventHandler(this.summaryBtn_Click);
             // 
             // exitButton
             // 

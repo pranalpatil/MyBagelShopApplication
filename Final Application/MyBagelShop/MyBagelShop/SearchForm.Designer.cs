@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.searchTrxGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchbutton = new System.Windows.Forms.Button();
             this.clearSearchBtn = new System.Windows.Forms.Button();
             this.searchInputTextBox = new System.Windows.Forms.TextBox();
             this.transactionNoRadioButton = new System.Windows.Forms.RadioButton();
@@ -38,7 +39,6 @@
             this.searchResultListBox = new System.Windows.Forms.ListBox();
             this.colorPanel = new System.Windows.Forms.Panel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
-            this.searchbutton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.searchTrxGroupBox.SuspendLayout();
             this.colorPanel.SuspendLayout();
@@ -61,6 +61,16 @@
             this.searchTrxGroupBox.TabIndex = 32;
             this.searchTrxGroupBox.TabStop = false;
             this.searchTrxGroupBox.Text = "Search transactions";
+            // 
+            // searchbutton
+            // 
+            this.searchbutton.Location = new System.Drawing.Point(62, 238);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(143, 63);
+            this.searchbutton.TabIndex = 34;
+            this.searchbutton.Text = "&Search";
+            this.searchbutton.UseVisualStyleBackColor = true;
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
             // clearSearchBtn
             // 
@@ -138,15 +148,6 @@
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPictureBox.TabIndex = 0;
             this.logoPictureBox.TabStop = false;
-            // 
-            // searchbutton
-            // 
-            this.searchbutton.Location = new System.Drawing.Point(62, 238);
-            this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(143, 63);
-            this.searchbutton.TabIndex = 34;
-            this.searchbutton.Text = "&Search";
-            this.searchbutton.UseVisualStyleBackColor = true;
             // 
             // exitButton
             // 

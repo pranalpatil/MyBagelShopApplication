@@ -36,8 +36,12 @@ namespace MyBagelShop
         int[,] ArrayStock = new int[13, 5];
         int[,] ArraySales = new int[13, 5];
         Boolean DotFlag;
-        string TrxID = "";
+        string TrxID = "", QtyTotal="";
         int StockItemIndex, StockIndexSize;
+        public static decimal BagelOverall { get; private set; } = 0;
+        public static decimal tempTotalPrice { get; private set; } = 0;
+        public static decimal avgOverall { get; private set; } = 0;
+        public static decimal Count { get; private set; } = 0;
 
         // Reading the prices of Bagel from Text File.
         public Boolean BagelPrices()
@@ -139,9 +143,11 @@ namespace MyBagelShop
                         Items.SubItems.Add(qytOrder.ToString());
                         Items.SubItems.Add(finalCost.ToString("C2"));
                         displayListView.Items.Add(Items);
-                        BagelQty.Add(BeagelNames[bagelTypeIndex]+"   --   "+Bagelsizes[bagelSizeIndex] + "   --   " +qytOrder);
+                        BagelQty.Add(BeagelNames[bagelTypeIndex]+","+Bagelsizes[bagelSizeIndex] + "," +qytOrder);
                         totalStoreCost +=finalCost;
                         totalPriceLabel.Text= totalStoreCost.ToString("C2");
+                        QtyTotal += qytOrder;
+                        
                     }
                 }
 
@@ -156,7 +162,7 @@ namespace MyBagelShop
             string[] StockSizeArray = new string[displayListView.Items.Count];
 
             // Sorting the data into array 
-            for (int z = 0; z < displayListView.Items.Count; z++)
+            for (int z = 0; z < displayListView.Items.Count; z++)// 
             {
                 StockProdArray[z] = displayListView.Items[z].SubItems[0].Text;
                 StockSizeArray[z] = displayListView.Items[z].SubItems[0].Text;
@@ -312,7 +318,7 @@ namespace MyBagelShop
 
         public void orderData()
         {
-            //string Fileload = File.ReadAllText("BagelShop_Transaction.txt");
+            //string Fileload = File.ReadAllText("TransactionFilePath");
             string writeData = string.Join(",", BagelQty);
             if (!File.Exists(TransactionFilePath))
             {
@@ -363,46 +369,28 @@ namespace MyBagelShop
                 BagelQty.Insert(0, DT);
                 BagelQty.Insert(0, TrxID);
                 BagelQty.Insert(BagelQty.Count, totalStoreCost.ToString("C"));
-
-
                 string messagepopupString = string.Join("\n", BagelQty);
-
-                // put on top before adding to list
-                bool Unique = IsUnique(TrxID, TransactionFilePath);
-
-                if (Unique == true)
-                {
-
-                }
-                    StreamWriter FileOutput = File.AppendText(TransactionFilePath);
-
-               //FileOutput.WriteLine(TrxID);
-                //FileOutput.WriteLine(DT);
-
-                // Order details writing into the array and storing into the file
-                //for (int n = 0; n < displayListView.Items.Count; n++)
-                //{
-                //    for (int a = 0; a < 4; a++)
-                //    {
-                //        FileOutput.WriteLine(displayListView.Items[n].SubItems[a].Text);
-                //    }
-                //}
-
-                //FileOutput.WriteLine(totalStoreCost.ToString("C"));
-                //FileOutput.WriteLine(messagepopupString);
-                //FileOutput.WriteLine("********************************");
-                //FileOutput.Close();
                 MessageBox.Show("TheBagelShop" + "\n" + "\n" + "Transaction ID: "+ messagepopupString, "Confirmed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                orderData();
 
-                    orderData();
-                    //MessageBox.Show("TheBagelShop" + "\n" + "\n" + "Transaction ID: " + TransactionID + "\n" + "Date & Time: " +
-                    //"\n" + "Bagel Name: " + BagelNames[SelectedBagelIndex] + "\n" + "Bagel Size: " + BagelSize[SelectedBagelSize] +
-                    //"\n" + "Quantity: " + OrderQty + "\n" + "\n" + "Item Price: " + TotalOrderPrice.ToString("C") +
-                    //"\n" + "Total Price: " + countPrice1.ToString("C") + messagepopupString, "Confirmed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Count++;
+                BagelOverall+=qytOrder;
+                tempTotalPrice+=finalCost;
+                avgOverall=tempTotalPrice/Count;
 
                 
+                displayListView.Items.Clear();
+                bagelTypeListBox.ClearSelected();
+                bagelSizeListBox.ClearSelected();
+                qytNumericUpDown.Value=0;
+
+                messagepopupString="";
+
+
+
+
+
             }
-            //
 
             else
             {
@@ -410,6 +398,12 @@ namespace MyBagelShop
                 MessageBox.Show("Not Enough Quantity, please order something different.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void summaryBtn_Click(object sender, EventArgs e)
+        {
+            SummayForm Summary = new SummayForm();
+            Summary.Show();
         }
 
         private Boolean IsUnique(string SearchString, string transaction)
@@ -435,6 +429,11 @@ namespace MyBagelShop
         private void clearBtn_Click(object sender, EventArgs e)
         {
             displayListView.Items.Clear();
+            totalStoreCost=0;
+            qytNumericUpDown.Value=0;
+            bagelTypeListBox.ClearSelected();
+            bagelSizeListBox.ClearSelected();
+            totalPriceLabel.Text="";
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
