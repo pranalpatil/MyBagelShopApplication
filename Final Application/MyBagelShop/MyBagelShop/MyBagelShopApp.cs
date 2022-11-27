@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -347,7 +348,6 @@ namespace MyBagelShop
         private string getRandomTransactionNo()
         {
             string transactionNo;
-            //int x = 0;
             Random random = new Random();
             do
             {
@@ -384,14 +384,17 @@ namespace MyBagelShop
                 tempTotalPrice+=finalCost;
                 avgOverall=tempTotalPrice/Count;
 
-                
+
                 displayListView.Items.Clear();
                 bagelTypeListBox.ClearSelected();
                 bagelSizeListBox.ClearSelected();
                 qytNumericUpDown.Value=0;
 
-                messagepopupString="";
+                totalStoreCost=0;
+                totalPriceLabel.Text="0";
+                messagepopupString ="";
                 BagelQty.Clear();
+
 
 
 
@@ -399,19 +402,16 @@ namespace MyBagelShop
 
             }
 
-            //else
-            //{
-                
-            //    MessageBox.Show("Not Enough Quantity, please order something different.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
         }
 
-        private void summaryBtn_Click(object sender, EventArgs e)
+        private void stockDataBtn_Click(object sender, EventArgs e)
         {
-            SummayForm Summary = new SummayForm();
-            Summary.Show();
+            Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo(StockFilePath);
+            proc.Start();
         }
+
+        
 
         private Boolean IsUnique(string SearchString, string transaction)
         {
@@ -453,7 +453,18 @@ namespace MyBagelShop
             Close();
         }
 
+        private void saleReportBtn_Click(object sender, EventArgs e)
+        {
+            Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo(SalereportFilePath);
+            proc.Start();
+        }
 
+        private void summaryBtn_Click(object sender, EventArgs e)
+        {
+            SummayForm Summary = new SummayForm();
+            Summary.Show();
+        }
 
     }
 

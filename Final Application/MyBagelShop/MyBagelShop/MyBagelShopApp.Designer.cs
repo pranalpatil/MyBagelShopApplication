@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyBagelShopApp));
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.colorPanel = new System.Windows.Forms.Panel();
@@ -51,6 +52,7 @@
             this.stockDataBtn = new System.Windows.Forms.Button();
             this.summaryBtn = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.btnToolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.colorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qytNumericUpDown)).BeginInit();
@@ -115,7 +117,7 @@
             // 
             this.bagelSizeLabel.AutoSize = true;
             this.bagelSizeLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bagelSizeLabel.Location = new System.Drawing.Point(304, 157);
+            this.bagelSizeLabel.Location = new System.Drawing.Point(386, 157);
             this.bagelSizeLabel.Name = "bagelSizeLabel";
             this.bagelSizeLabel.Size = new System.Drawing.Size(61, 29);
             this.bagelSizeLabel.TabIndex = 5;
@@ -125,22 +127,24 @@
             // 
             this.addToCartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(189)))), ((int)(((byte)(207)))));
             this.addToCartBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addToCartBtn.Location = new System.Drawing.Point(553, 269);
+            this.addToCartBtn.Location = new System.Drawing.Point(799, 189);
             this.addToCartBtn.Name = "addToCartBtn";
             this.addToCartBtn.Size = new System.Drawing.Size(147, 75);
             this.addToCartBtn.TabIndex = 6;
             this.addToCartBtn.Text = "&Add to Cart";
+            this.btnToolTip.SetToolTip(this.addToCartBtn, "Press the Add to Cart button, To add the chosen bagel to your cart");
             this.addToCartBtn.UseVisualStyleBackColor = false;
             this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
             // 
             // clearBtn
             // 
             this.clearBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(361, 693);
+            this.clearBtn.Location = new System.Drawing.Point(553, 694);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(147, 51);
             this.clearBtn.TabIndex = 8;
             this.clearBtn.Text = "&Clear";
+            this.btnToolTip.SetToolTip(this.clearBtn, "Press Clear button to take new order\r\n");
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
@@ -149,11 +153,12 @@
             this.orderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
             this.orderBtn.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.orderBtn.Location = new System.Drawing.Point(676, 691);
+            this.orderBtn.Location = new System.Drawing.Point(799, 281);
             this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(147, 51);
+            this.orderBtn.Size = new System.Drawing.Size(147, 63);
             this.orderBtn.TabIndex = 9;
             this.orderBtn.Text = "&Order";
+            this.btnToolTip.SetToolTip(this.orderBtn, "Press the order button To place an order & checkout\r\n");
             this.orderBtn.UseVisualStyleBackColor = false;
             this.orderBtn.Click += new System.EventHandler(this.orderBtn_Click);
             // 
@@ -169,18 +174,20 @@
             // 
             // qytNumericUpDown
             // 
+            this.qytNumericUpDown.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qytNumericUpDown.Location = new System.Drawing.Point(553, 189);
             this.qytNumericUpDown.Name = "qytNumericUpDown";
-            this.qytNumericUpDown.Size = new System.Drawing.Size(147, 31);
+            this.qytNumericUpDown.Size = new System.Drawing.Size(147, 35);
             this.qytNumericUpDown.TabIndex = 11;
+            this.qytNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // totalPriceLabel
             // 
             this.totalPriceLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.totalPriceLabel.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPriceLabel.Location = new System.Drawing.Point(782, 278);
+            this.totalPriceLabel.Location = new System.Drawing.Point(547, 272);
             this.totalPriceLabel.Name = "totalPriceLabel";
-            this.totalPriceLabel.Size = new System.Drawing.Size(193, 66);
+            this.totalPriceLabel.Size = new System.Drawing.Size(153, 66);
             this.totalPriceLabel.TabIndex = 12;
             this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -224,7 +231,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
             this.panel1.Location = new System.Drawing.Point(1103, 162);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 510);
+            this.panel1.Size = new System.Drawing.Size(10, 613);
             this.panel1.TabIndex = 14;
             // 
             // SearchButton
@@ -235,6 +242,7 @@
             this.SearchButton.Size = new System.Drawing.Size(147, 51);
             this.SearchButton.TabIndex = 15;
             this.SearchButton.Text = "&Search";
+            this.btnToolTip.SetToolTip(this.SearchButton, "Press the Search Button to find Transactions.\r\n");
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
@@ -246,7 +254,9 @@
             this.saleReportBtn.Size = new System.Drawing.Size(147, 51);
             this.saleReportBtn.TabIndex = 16;
             this.saleReportBtn.Text = "Sale &Report";
+            this.btnToolTip.SetToolTip(this.saleReportBtn, "Press the sale report button to show compnay sale report \r\n");
             this.saleReportBtn.UseVisualStyleBackColor = true;
+            this.saleReportBtn.Click += new System.EventHandler(this.saleReportBtn_Click);
             // 
             // stockDataBtn
             // 
@@ -256,7 +266,9 @@
             this.stockDataBtn.Size = new System.Drawing.Size(147, 51);
             this.stockDataBtn.TabIndex = 17;
             this.stockDataBtn.Text = "Stock &Data";
+            this.btnToolTip.SetToolTip(this.stockDataBtn, "Press the Stock Data button to check pending stock. \r\n");
             this.stockDataBtn.UseVisualStyleBackColor = true;
+            this.stockDataBtn.Click += new System.EventHandler(this.stockDataBtn_Click);
             // 
             // summaryBtn
             // 
@@ -266,19 +278,27 @@
             this.summaryBtn.Size = new System.Drawing.Size(147, 51);
             this.summaryBtn.TabIndex = 18;
             this.summaryBtn.Text = "Su&mmary";
+            this.btnToolTip.SetToolTip(this.summaryBtn, "Press the Summary button to show Total compnay Summary data\r\n");
             this.summaryBtn.UseVisualStyleBackColor = true;
             this.summaryBtn.Click += new System.EventHandler(this.summaryBtn_Click);
             // 
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(1170, 691);
+            this.exitButton.Location = new System.Drawing.Point(1170, 734);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(147, 51);
             this.exitButton.TabIndex = 19;
             this.exitButton.Text = "E&xit";
+            this.btnToolTip.SetToolTip(this.exitButton, "Press Exit Button to close application");
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // btnToolTip
+            // 
+            this.btnToolTip.IsBalloon = true;
+            this.btnToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.btnToolTip.ToolTipTitle = "Info";
             // 
             // MyBagelShopApp
             // 
@@ -340,6 +360,7 @@
         private System.Windows.Forms.Button stockDataBtn;
         private System.Windows.Forms.Button summaryBtn;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ToolTip btnToolTip;
     }
 }
 

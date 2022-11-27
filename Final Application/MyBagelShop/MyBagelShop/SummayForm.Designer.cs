@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SummayForm));
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.colorPanel = new System.Windows.Forms.Panel();
@@ -40,6 +41,8 @@
             this.totalTransactionDisplayLabel = new System.Windows.Forms.Label();
             this.AverageDisplayLabel = new System.Windows.Forms.Label();
             this.exitbutton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.colorPanel.SuspendLayout();
             this.SuspendLayout();
@@ -148,8 +151,17 @@
             this.exitbutton.Size = new System.Drawing.Size(297, 68);
             this.exitbutton.TabIndex = 44;
             this.exitbutton.Text = "E&xit";
+            this.toolTip1.SetToolTip(this.exitbutton, "Press Exit button to Close Summry popup.");
             this.exitbutton.UseVisualStyleBackColor = true;
             this.exitbutton.Click += new System.EventHandler(this.exitbutton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
+            this.panel1.Location = new System.Drawing.Point(1007, 156);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 542);
+            this.panel1.TabIndex = 45;
             // 
             // SummayForm
             // 
@@ -157,6 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 726);
             this.Controls.Add(this.exitbutton);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.AverageDisplayLabel);
             this.Controls.Add(this.totalTransactionDisplayLabel);
             this.Controls.Add(this.TotalSaleDisplayLabel);
@@ -166,8 +179,9 @@
             this.Controls.Add(this.totalSaleValueLabel);
             this.Controls.Add(this.totalBagelLabel);
             this.Controls.Add(this.colorPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SummayForm";
-            this.Text = "SummayForm";
+            this.Text = "Companu Summay Data";
             this.Load += new System.EventHandler(this.SummayForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.colorPanel.ResumeLayout(false);
@@ -189,5 +203,7 @@
         private System.Windows.Forms.Label totalTransactionDisplayLabel;
         private System.Windows.Forms.Label AverageDisplayLabel;
         private System.Windows.Forms.Button exitbutton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

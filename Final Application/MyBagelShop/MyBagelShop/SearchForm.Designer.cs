@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchForm));
             this.searchTrxGroupBox = new System.Windows.Forms.GroupBox();
             this.searchbutton = new System.Windows.Forms.Button();
@@ -40,6 +41,8 @@
             this.colorPanel = new System.Windows.Forms.Panel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.searchTrxGroupBox.SuspendLayout();
             this.colorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -69,6 +72,7 @@
             this.searchbutton.Size = new System.Drawing.Size(143, 63);
             this.searchbutton.TabIndex = 34;
             this.searchbutton.Text = "&Search";
+            this.toolTip1.SetToolTip(this.searchbutton, "Press Search Button to get Transaction details");
             this.searchbutton.UseVisualStyleBackColor = true;
             this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
@@ -79,6 +83,7 @@
             this.clearSearchBtn.Size = new System.Drawing.Size(143, 63);
             this.clearSearchBtn.TabIndex = 33;
             this.clearSearchBtn.Text = "&Clear";
+            this.toolTip1.SetToolTip(this.clearSearchBtn, "Press Clear button to clear form");
             this.clearSearchBtn.UseVisualStyleBackColor = true;
             // 
             // searchInputTextBox
@@ -104,10 +109,10 @@
             this.dateRadioButton.AutoSize = true;
             this.dateRadioButton.Location = new System.Drawing.Point(31, 65);
             this.dateRadioButton.Name = "dateRadioButton";
-            this.dateRadioButton.Size = new System.Drawing.Size(270, 33);
+            this.dateRadioButton.Size = new System.Drawing.Size(268, 33);
             this.dateRadioButton.TabIndex = 30;
             this.dateRadioButton.TabStop = true;
-            this.dateRadioButton.Text = "Date (MM-DD-YYYY)";
+            this.dateRadioButton.Text = "Date (MM/DD/YYYY)";
             this.dateRadioButton.UseVisualStyleBackColor = true;
             // 
             // searchResultLabel
@@ -160,11 +165,24 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
+            this.panel1.Location = new System.Drawing.Point(1291, 134);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 613);
+            this.panel1.TabIndex = 36;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipTitle = "Press Exit Button to close Search transaction ";
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 769);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.colorPanel);
             this.Controls.Add(this.searchTrxGroupBox);
@@ -192,5 +210,7 @@
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Button searchbutton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
