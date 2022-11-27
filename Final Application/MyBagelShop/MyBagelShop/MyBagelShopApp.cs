@@ -98,7 +98,7 @@ namespace MyBagelShop
 
                 for (int a = 0; a < Bagelsizes.Length; a++)
                 {
-                    ArrayStock[r, a] = 20;
+                    ArrayStock[r, a] = 50;
                     ArraySales[r, a] = 0;
                     streamWriter.Write(ArrayStock[r, a] + "\t");
                 }
@@ -165,7 +165,7 @@ namespace MyBagelShop
             for (int z = 0; z < displayListView.Items.Count; z++)// 
             {
                 StockProdArray[z] = displayListView.Items[z].SubItems[0].Text;
-                StockSizeArray[z] = displayListView.Items[z].SubItems[0].Text;
+                StockSizeArray[z] = displayListView.Items[z].SubItems[1].Text;
             }
 
             for (int x = 0; x < displayListView.Items.Count; x++)
@@ -213,24 +213,28 @@ namespace MyBagelShop
                         break;
                 }
 
-                switch (StockSizeArray.GetValue(x))
+                for (int y = 0; y < displayListView.Items.Count; y++)
                 {
-                    case "Small":
-                        StockIndexSize = 0;
-                        break;
-                    case "Medium":
-                        StockIndexSize = 1;
-                        break;
-                    case "Regular":
-                        StockIndexSize = 2;
-                        break;
-                    case "Large":
-                        StockIndexSize = 3;
-                        break;
-                    case "Extra Large":
-                        StockIndexSize = 4;
-                        break;
+                    switch (StockSizeArray.GetValue(y))
+                    {
+                        case "Small":
+                            StockIndexSize = 0;
+                            break;
+                        case "Medium":
+                            StockIndexSize = 1;
+                            break;
+                        case "Regular":
+                            StockIndexSize = 2;
+                            break;
+                        case "Large":
+                            StockIndexSize = 3;
+                            break;
+                        case "Extra Large":
+                            StockIndexSize = 4;
+                            break;
+                    }
                 }
+
 
                 // storing the temp number of types from stocks
                 int FirstCalculate = ArrayStock[StockItemIndex, StockIndexSize];
@@ -241,7 +245,9 @@ namespace MyBagelShop
 
                 // Storing pending stock in array
                 ArrayStock[StockItemIndex, StockIndexSize] = StockPending;
-                ArraySales[StockItemIndex, StockIndexSize] += BagelQytSold;
+                ArraySales[StockItemIndex, StockIndexSize] = BagelQytSold + ArraySales[StockItemIndex, StockIndexSize];
+
+
 
                 // Below are checking the pending stocks
                 if (StockPending < 0)
@@ -267,7 +273,7 @@ namespace MyBagelShop
             // getting column titles in stock pending file.
             for (int c = 0; c < Bagelsizes.Length; c++)
             {
-                streamWriter.Write("\t" + Bagelsizes[c]);
+                streamWriter.Write("\t"  + Bagelsizes[c]);
                 if (c == (Bagelsizes.Length - 1))
                 {
                     streamWriter.WriteLine("\n");
@@ -289,29 +295,29 @@ namespace MyBagelShop
 
             // Logic to update the items in sales report
             File.WriteAllText(SalereportFilePath, string.Empty);
-            StreamWriter sw_ReportSalesWriter = File.AppendText(SalereportFilePath);
+            StreamWriter SalesWriter = File.AppendText(SalereportFilePath);
             for (int i = 0; i < Bagelsizes.Length; i++)
             {
-                sw_ReportSalesWriter.Write("\t");
-                sw_ReportSalesWriter.Write(Bagelsizes[i]);
+                SalesWriter.Write("\t");
+                SalesWriter.Write(Bagelsizes[i]);
 
                 if (i == Bagelsizes.Length - 1)
                 {
-                    sw_ReportSalesWriter.Write("\n");
+                    SalesWriter.Write("\n");
                 }
             }
 
             // Loop to write column headers and array values to file
             for (int i = 0; i < BeagelNames.Length; i++)
             {
-                sw_ReportSalesWriter.Write(BeagelNames[i] + "\t");
+                SalesWriter.Write(BeagelNames[i] + "\t");
                 for (int j = 0; j < Bagelsizes.Length; j++)
                 {
-                    sw_ReportSalesWriter.Write(ArraySales[i, j] + "\t");
+                    SalesWriter.Write(ArraySales[i, j] + "\t");
                 }
-                sw_ReportSalesWriter.Write("\n");
+                SalesWriter.Write("\n");
             }
-            sw_ReportSalesWriter.Close();
+            SalesWriter.Close();
 
         }
 
@@ -393,11 +399,11 @@ namespace MyBagelShop
 
             }
 
-            else
-            {
+            //else
+            //{
                 
-                MessageBox.Show("Not Enough Quantity, please order something different.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    MessageBox.Show("Not Enough Quantity, please order something different.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 
@@ -409,8 +415,7 @@ namespace MyBagelShop
 
         private Boolean IsUnique(string SearchString, string transaction)
         {
-            //OutputFile.Close();
-            //string location = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, TransactionFilePath);
+            
             string[] record;
             string[] ReadText = File.ReadAllLines(TransactionFilePath);
             for (int i = 0; i < ReadText.Length; i++)

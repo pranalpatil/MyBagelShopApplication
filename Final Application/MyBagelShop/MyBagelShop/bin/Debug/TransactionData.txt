@@ -21,3 +21,24 @@
 96129,11/27/2022,10341,11/27/2022,Everything,Small,1,$3.80,Salt,Large,1,$11.46
 50191,11/27/2022,Everything,Medium,2,$8.88
 26152,11/27/2022,50191,11/27/2022,Everything,Medium,2,$8.88,Egg,Regular,1,$15.38
+65000,11/27/2022,Asiago,Medium,1,$4.70
+33333,11/27/2022,Whole Wheat,Small,1,$3.50
+27158,11/27/2022,Whole Wheat,Small,1,$7.00
+67950,11/27/2022,Whole Wheat,Medium,5,$21.50
+79425,11/27/2022,Blueberry,Regular,1,$5.30
+11372,11/27/2022,Whole Wheat,Small,10,$35.00
+34552,11/27/2022,Chocolate Chip,Extra-Large ,10,$108.30
+66739,11/27/2022,Blueberry,Medium,2,$9.78
+46781,11/27/2022,Whole Wheat,Extra-Large ,10,$60.00
+38889,11/27/2022,Chocolate Chip,Regular,3,$16.20
+97648,11/27/2022,Chocolate Chip,Medium,2,$9.20
+44253,11/27/2022,Blueberry,Small,80,Asiago,Small,80,Whole Wheat,Small,40,$140.00
+12668,11/27/2022,Cheddar,Extra-Large ,6,$65.94
+98684,11/27/2022,Cheddar,Extra-Large ,5,$54.95
+50882,11/27/2022,Cheddar,Extra-Large ,3,$32.97
+17380,11/27/2022,Cheddar,Extra-Large ,5,$54.95
+67914,11/27/2022,Cheddar,Large,5,$40.78
+54825,11/27/2022,Whole Wheat,Small,1,$44.28
+39917,11/27/2022,Everything,Medium,1,$48.72
+52684,11/27/2022,Chocolate Chip,Extra-Large ,1,$56.05
+60938,11/27/2022,Onion,Medium,1,$60.48

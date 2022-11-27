@@ -1,15 +1,15 @@
 	Small	Medium	Regular	Large	Extra-Large 
 
-Whole Wheat	20	20	20	20	20	
-Everything	18	20	20	20	20	
-Blueberry	20	20	20	20	20	
-Chocolate Chip	20	20	20	20	20	
-Onion	20	20	20	20	20	
-Asiago	20	20	20	20	20	
-Salt	20	20	20	20	20	
-Poppy Seed	20	20	20	20	20	
-French Toast	20	20	20	20	20	
-Egg	19	20	20	20	20	
-Garlic	20	20	20	20	20	
-Sesame	20	20	20	20	20	
-Cheddar	20	20	20	20	20	
+Whole Wheat	49	50	50	50	50	
+Everything	50	49	50	50	50	
+Blueberry	50	50	50	50	50	
+Chocolate Chip	50	49	50	50	50	
+Onion	50	49	50	50	50	
+Asiago	50	50	50	50	50	
+Salt	50	50	50	50	50	
+Poppy Seed	50	50	50	50	50	
+French Toast	50	50	50	50	50	
+Egg	50	50	50	50	50	
+Garlic	50	50	50	50	50	
+Sesame	50	50	50	50	50	
+Cheddar	50	50	50	45	50	
