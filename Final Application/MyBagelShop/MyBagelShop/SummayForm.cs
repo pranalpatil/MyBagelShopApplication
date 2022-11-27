@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace MyBagelShop
 {
-    public partial class SearchForm : Form
+    public partial class SummayForm : Form
     {
-        public SearchForm()
+        public SummayForm()
         {
             InitializeComponent();
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
+        private void exitbutton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void SummayForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

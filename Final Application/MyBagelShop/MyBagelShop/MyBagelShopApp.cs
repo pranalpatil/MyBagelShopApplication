@@ -20,6 +20,10 @@ namespace MyBagelShop
         // Declearing the Variables and storing the Names & Size in arrays
         decimal[,] FinalBagelprice = new decimal[13, 5];
         const string PriceFilePath = "PriceListBagel.txt";
+        const string StockFilePath = "StockData.txt";
+        const string TransactionFilePath = "TransactionData.txt";
+        //const string StockPendingFilePath = "StockPending.txt";
+        const string SalereportFilePath = "SalesReport.txt";
         private static String[] BeagelNames = { "Whole Wheat", "Everything", "Blueberry", "Chocolate Chip", "Onion", "Asiago", "Salt", "Poppy Seed", "French Toast", "Egg", "Garlic", "Sesame", "Cheddar" };
         private static String[] Bagelsizes = { "Small", "Medium", "Regular", "Large", "Extra-Large " };
         int bagelTypeIndex = 0, bagelSizeIndex = 0, qytOrder=0;
@@ -27,8 +31,14 @@ namespace MyBagelShop
         int SelectedSizs=0;
         decimal finalCost = 0;
         decimal totalStoreCost;
+        List<string> BagelQty = new List<string>();
+        List<string> BagleCost = new List<string>();
+        int[,] ArrayStock = new int[13, 5];
+        int[,] ArraySales = new int[13, 5];
+        Boolean DotFlag;
+        string TrxID = "";
+        int StockItemIndex, StockIndexSize;
 
-        
         // Reading the prices of Bagel from Text File.
         public Boolean BagelPrices()
         {
@@ -63,9 +73,37 @@ namespace MyBagelShop
                 }
             }
             BagelPrices();
+
+            File.WriteAllText(StockFilePath, string.Empty);
+            StreamWriter streamWriter = File.AppendText(StockFilePath);
+
+            // Prinitng the col headings in Inventory File
+            for (int p = 0; p < Bagelsizes.Length; p++)
+            {
+                streamWriter.Write("\t" + Bagelsizes[p]);
+                if (p == (Bagelsizes.Length - 1))
+                {
+                    streamWriter.WriteLine("\n");
+                }
+            }
+
+            // Printing row headers and inventory stock values 
+            for (int r = 0; r < BeagelNames.Length; r++)
+            {
+                streamWriter.Write(BeagelNames[r] + "\t");
+
+                for (int a = 0; a < Bagelsizes.Length; a++)
+                {
+                    ArrayStock[r, a] = 20;
+                    ArraySales[r, a] = 0;
+                    streamWriter.Write(ArrayStock[r, a] + "\t");
+                }
+                streamWriter.Write("\n");
+            }
+            streamWriter.Close();
         }
 
-
+        // 
         private void addToCartBtn_Click(object sender, EventArgs e)
 
         {
@@ -95,16 +133,15 @@ namespace MyBagelShop
                         qytOrder=Convert.ToInt32(qytNumericUpDown.Value);
 
                         finalCost=qytOrder*FinalBagelprice[bagelTypeIndex, bagelSizeIndex];
-                        totalStoreCost +=finalCost;
-                        totalPriceLabel.Text= totalStoreCost.ToString("C2");
-
-                        //ItemGroupBox.Items.Add(BeagelNames[bagelTypeIndex]+ "      "+qytOrder+ "    "+Bagelsizes[bagelSizeIndex]+ "    "+ finalCost.ToString("C2"));
+                        
                         ListViewItem Items=new ListViewItem(BeagelNames[bagelTypeIndex]);
                         Items.SubItems.Add(Bagelsizes[bagelSizeIndex]);
                         Items.SubItems.Add(qytOrder.ToString());
                         Items.SubItems.Add(finalCost.ToString("C2"));
                         displayListView.Items.Add(Items);
-
+                        BagelQty.Add(BeagelNames[bagelTypeIndex]+"   --   "+Bagelsizes[bagelSizeIndex] + "   --   " +qytOrder);
+                        totalStoreCost +=finalCost;
+                        totalPriceLabel.Text= totalStoreCost.ToString("C2");
                     }
                 }
 
@@ -113,7 +150,188 @@ namespace MyBagelShop
             }
 
         }
+        private void StockUpdate()
+        {
+            string[] StockProdArray = new string[displayListView.Items.Count];
+            string[] StockSizeArray = new string[displayListView.Items.Count];
 
+            // Sorting the data into array 
+            for (int z = 0; z < displayListView.Items.Count; z++)
+            {
+                StockProdArray[z] = displayListView.Items[z].SubItems[0].Text;
+                StockSizeArray[z] = displayListView.Items[z].SubItems[0].Text;
+            }
+
+            for (int x = 0; x < displayListView.Items.Count; x++)
+            {
+                switch (StockProdArray.GetValue(x))
+                {
+                    case "Whole Wheat":
+                        StockItemIndex = 0;
+                        break;
+                    case "Everything":
+                        StockItemIndex = 1;
+                        break;
+                    case "Blueberry":
+                        StockItemIndex = 2;
+                        break;
+                    case "Chocolate Chip":
+                        StockItemIndex = 3;
+                        break;
+                    case "Onion":
+                        StockItemIndex = 4;
+                        break;
+                    case "Asiago":
+                        StockItemIndex = 5;
+                        break;
+                    case "Salt":
+                        StockItemIndex = 6;
+                        break;
+                    case "Poppy Seed":
+                        StockItemIndex = 7;
+                        break;
+                    case "French Toast":
+                        StockItemIndex = 8;
+                        break;
+                    case "Egg":
+                        StockItemIndex = 9;
+                        break;
+                    case "Garlic":
+                        StockItemIndex = 10;
+                        break;
+                    case "Sesame":
+                        StockItemIndex = 11;
+                        break;
+                    case "Cheddar":
+                        StockItemIndex = 12;
+                        break;
+                }
+
+                switch (StockSizeArray.GetValue(x))
+                {
+                    case "Small":
+                        StockIndexSize = 0;
+                        break;
+                    case "Medium":
+                        StockIndexSize = 1;
+                        break;
+                    case "Regular":
+                        StockIndexSize = 2;
+                        break;
+                    case "Large":
+                        StockIndexSize = 3;
+                        break;
+                    case "Extra Large":
+                        StockIndexSize = 4;
+                        break;
+                }
+
+                // storing the temp number of types from stocks
+                int FirstCalculate = ArrayStock[StockItemIndex, StockIndexSize];
+                int BagelQytSold = Convert.ToInt32(displayListView.Items[x].SubItems[2].Text);
+
+                // pending stocks calculating
+                int StockPending = FirstCalculate - BagelQytSold;
+
+                // Storing pending stock in array
+                ArrayStock[StockItemIndex, StockIndexSize] = StockPending;
+                //SalesArray[InventoryItemIndex, StockRemaining] += QTYVolumeSold;
+
+                // Below are checking the pending stocks
+                if (StockPending < 0)
+                {
+                    int StockBackUp = StockPending - FirstCalculate;
+
+                    MessageBox.Show("Not enough stock", "Error");
+                    finalCost = 0;
+
+                    DotFlag = false;
+                }
+                else
+                {
+                    ArrayStock[StockItemIndex, StockIndexSize] = StockPending;
+                    DotFlag = true;
+                }
+            }
+
+            //
+            File.WriteAllText(StockFilePath, string.Empty);
+            StreamWriter streamWriter = File.AppendText(StockFilePath);
+
+            // getting column titles in stock pending file.
+            for (int c = 0; c < Bagelsizes.Length; c++)
+            {
+                streamWriter.Write("\t" + Bagelsizes[c]);
+                if (c == (Bagelsizes.Length - 1))
+                {
+                    streamWriter.WriteLine("\n");
+                }
+            }
+
+            // getting row titles in stock pending file.
+            for (int v = 0; v < BeagelNames.Length; v++)
+            {
+                streamWriter.Write(BeagelNames[v] + "\t");
+
+                for (int l = 0; l < Bagelsizes.Length; l++)
+                {
+                    streamWriter.Write(ArrayStock[v, l] + "\t");
+                }
+                streamWriter.Write("\n");
+            }
+            streamWriter.Close();
+
+            // Logic to update the items in sales report
+            File.WriteAllText(SalereportFilePath, string.Empty);
+            StreamWriter sw_ReportSalesWriter = File.AppendText(SalereportFilePath);
+            for (int i = 0; i < Bagelsizes.Length; i++)
+            {
+                sw_ReportSalesWriter.Write("\t");
+                sw_ReportSalesWriter.Write(Bagelsizes[i]);
+
+                if (i == Bagelsizes.Length - 1)
+                {
+                    sw_ReportSalesWriter.Write("\n");
+                }
+            }
+
+            // Loop to write column headers and array values to file
+            for (int i = 0; i < BeagelNames.Length; i++)
+            {
+                sw_ReportSalesWriter.Write(BeagelNames[i] + "\t");
+                for (int j = 0; j < Bagelsizes.Length; j++)
+                {
+                    sw_ReportSalesWriter.Write(ArraySales[i, j] + "\t");
+                }
+                sw_ReportSalesWriter.Write("\n");
+            }
+            sw_ReportSalesWriter.Close();
+
+        }
+
+
+        public void orderData()
+        {
+            //string Fileload = File.ReadAllText("BagelShop_Transaction.txt");
+            string writeData = string.Join(",", BagelQty);
+            if (!File.Exists(TransactionFilePath))
+            {
+                using (StreamWriter writefile = File.AppendText(TransactionFilePath))
+                {
+                    writefile.WriteLine(writeData);
+                    writefile.Close();
+                }
+            }
+            else
+            {
+                using (StreamWriter fileData = File.AppendText(TransactionFilePath))
+                {
+                    fileData.WriteLine(writeData);
+                    fileData.Close();
+                }
+            }
+        }
+        // Created an method to genrate traansaction no.
         private string getRandomTransactionNo()
         {
             string transactionNo;
@@ -132,17 +350,86 @@ namespace MyBagelShop
             bool found = false;
             return found;
         }
+
+
         private void orderBtn_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you wish to confirm with your Order?", "Order Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            StockUpdate();
+
+            if (DotFlag == true)
             {
-                    DateTime TimeSamay = DateTime.Now;
-                    MessageBox.Show("TheBagelShop" + "\n" + "\n" + "Transaction ID: " + getRandomTransactionNo() + "\n" + "Date & Time: " + TimeSamay +
-                    "\n" + "Bagel Name: " + BeagelNames[bagelTypeIndex] + "\n" + "Bagel Size: " + Bagelsizes[bagelSizeIndex]  +
-                    "\n" + "Quantity: " + qytOrder + "\n" + "\n" + "Item Price: " + finalCost.ToString("C") +
-                    "\n" + "Total Price: " + totalStoreCost.ToString("C"), "Confirmed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TrxID = getRandomTransactionNo();
+                string DT = DateTime.Now.ToString("MM/dd/yyyy");
+                BagelQty.Insert(0, DT);
+                BagelQty.Insert(0, TrxID);
+                BagelQty.Insert(BagelQty.Count, totalStoreCost.ToString("C"));
+
+
+                string messagepopupString = string.Join("\n", BagelQty);
+
+                // put on top before adding to list
+                bool Unique = IsUnique(TrxID, TransactionFilePath);
+
+                if (Unique == true)
+                {
+
+                }
+                    StreamWriter FileOutput = File.AppendText(TransactionFilePath);
+
+               //FileOutput.WriteLine(TrxID);
+                //FileOutput.WriteLine(DT);
+
+                // Order details writing into the array and storing into the file
+                //for (int n = 0; n < displayListView.Items.Count; n++)
+                //{
+                //    for (int a = 0; a < 4; a++)
+                //    {
+                //        FileOutput.WriteLine(displayListView.Items[n].SubItems[a].Text);
+                //    }
+                //}
+
+                //FileOutput.WriteLine(totalStoreCost.ToString("C"));
+                //FileOutput.WriteLine(messagepopupString);
+                //FileOutput.WriteLine("********************************");
+                //FileOutput.Close();
+                MessageBox.Show("TheBagelShop" + "\n" + "\n" + "Transaction ID: "+ messagepopupString, "Confirmed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    orderData();
+                    //MessageBox.Show("TheBagelShop" + "\n" + "\n" + "Transaction ID: " + TransactionID + "\n" + "Date & Time: " +
+                    //"\n" + "Bagel Name: " + BagelNames[SelectedBagelIndex] + "\n" + "Bagel Size: " + BagelSize[SelectedBagelSize] +
+                    //"\n" + "Quantity: " + OrderQty + "\n" + "\n" + "Item Price: " + TotalOrderPrice.ToString("C") +
+                    //"\n" + "Total Price: " + countPrice1.ToString("C") + messagepopupString, "Confirmed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                
             }
+            //
+
+            else
+            {
+                
+                MessageBox.Show("Not Enough Quantity, please order something different.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private Boolean IsUnique(string SearchString, string transaction)
+        {
+            //OutputFile.Close();
+            //string location = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, TransactionFilePath);
+            string[] record;
+            string[] ReadText = File.ReadAllLines(TransactionFilePath);
+            for (int i = 0; i < ReadText.Length; i++)
+            {
+                record = ReadText[i].Split(',');
+                if(record[0] == SearchString)
+                {
+                    return true;
+                    break;
+                }
+
+            }
+
+            return false;
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
@@ -152,10 +439,19 @@ namespace MyBagelShop
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            SearchForm Search = new SearchForm();
-            Search.Show();
+            SearchForm Searchtransaction = new SearchForm();
+            Searchtransaction.Show();
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
+
     }
+
 }
 
 

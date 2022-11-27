@@ -10,3 +10,4 @@
 \\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\Final Application\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.exe
 \\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\Final Application\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.pdb
 \\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\Final Application\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.SearchForm.resources
+\\Mac\Home\Desktop\Windows Data\University\Assignment 4\MyBagelShopApplication\Final Application\MyBagelShop\MyBagelShop\obj\Debug\MyBagelShop.SummayForm.resources

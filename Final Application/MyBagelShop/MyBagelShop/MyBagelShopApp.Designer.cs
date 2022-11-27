@@ -50,6 +50,7 @@
             this.saleReportBtn = new System.Windows.Forms.Button();
             this.stockDataBtn = new System.Windows.Forms.Button();
             this.summaryBtn = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.colorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qytNumericUpDown)).BeginInit();
@@ -135,7 +136,7 @@
             // clearBtn
             // 
             this.clearBtn.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(393, 691);
+            this.clearBtn.Location = new System.Drawing.Point(361, 693);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(147, 51);
             this.clearBtn.TabIndex = 8;
@@ -148,7 +149,7 @@
             this.orderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
             this.orderBtn.Font = new System.Drawing.Font("Arial", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.orderBtn.Location = new System.Drawing.Point(739, 691);
+            this.orderBtn.Location = new System.Drawing.Point(676, 691);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Size = new System.Drawing.Size(147, 51);
             this.orderBtn.TabIndex = 9;
@@ -267,11 +268,23 @@
             this.summaryBtn.Text = "Su&mmary";
             this.summaryBtn.UseVisualStyleBackColor = true;
             // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(1170, 691);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(147, 51);
+            this.exitButton.TabIndex = 19;
+            this.exitButton.Text = "E&xit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // MyBagelShopApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1403, 797);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.summaryBtn);
             this.Controls.Add(this.stockDataBtn);
             this.Controls.Add(this.saleReportBtn);
@@ -325,6 +338,7 @@
         private System.Windows.Forms.Button saleReportBtn;
         private System.Windows.Forms.Button stockDataBtn;
         private System.Windows.Forms.Button summaryBtn;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 

@@ -1,0 +1,15 @@
+	Small	Medium	Regular	Large	Extra-Large 
+
+Whole Wheat	20	20	20	20	20	
+Everything	20	20	20	20	20	
+Blueberry	20	20	20	20	20	
+Chocolate Chip	20	20	20	20	20	
+Onion	20	20	20	20	20	
+Asiago	1	20	20	20	20	
+Salt	20	20	20	20	20	
+Poppy Seed	20	20	20	20	20	
+French Toast	20	20	20	20	20	
+Egg	20	20	20	20	20	
+Garlic	20	20	20	20	20	
+Sesame	20	20	20	20	20	
+Cheddar	20	20	20	20	20	

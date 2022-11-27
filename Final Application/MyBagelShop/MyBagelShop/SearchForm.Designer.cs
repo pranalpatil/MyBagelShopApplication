@@ -38,6 +38,8 @@
             this.searchResultListBox = new System.Windows.Forms.ListBox();
             this.colorPanel = new System.Windows.Forms.Panel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.searchbutton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.searchTrxGroupBox.SuspendLayout();
             this.colorPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -45,6 +47,7 @@
             // 
             // searchTrxGroupBox
             // 
+            this.searchTrxGroupBox.Controls.Add(this.searchbutton);
             this.searchTrxGroupBox.Controls.Add(this.clearSearchBtn);
             this.searchTrxGroupBox.Controls.Add(this.searchInputTextBox);
             this.searchTrxGroupBox.Controls.Add(this.transactionNoRadioButton);
@@ -61,7 +64,7 @@
             // 
             // clearSearchBtn
             // 
-            this.clearSearchBtn.Location = new System.Drawing.Point(62, 283);
+            this.clearSearchBtn.Location = new System.Drawing.Point(62, 307);
             this.clearSearchBtn.Name = "clearSearchBtn";
             this.clearSearchBtn.Size = new System.Drawing.Size(143, 63);
             this.clearSearchBtn.TabIndex = 33;
@@ -123,7 +126,7 @@
             this.colorPanel.Controls.Add(this.logoPictureBox);
             this.colorPanel.Location = new System.Drawing.Point(-3, -2);
             this.colorPanel.Name = "colorPanel";
-            this.colorPanel.Size = new System.Drawing.Size(1356, 130);
+            this.colorPanel.Size = new System.Drawing.Size(1377, 130);
             this.colorPanel.TabIndex = 34;
             // 
             // logoPictureBox
@@ -136,16 +139,38 @@
             this.logoPictureBox.TabIndex = 0;
             this.logoPictureBox.TabStop = false;
             // 
+            // searchbutton
+            // 
+            this.searchbutton.Location = new System.Drawing.Point(62, 238);
+            this.searchbutton.Name = "searchbutton";
+            this.searchbutton.Size = new System.Drawing.Size(143, 63);
+            this.searchbutton.TabIndex = 34;
+            this.searchbutton.Text = "&Search";
+            this.searchbutton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Font = new System.Drawing.Font("Arial", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(534, 651);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(230, 49);
+            this.exitButton.TabIndex = 35;
+            this.exitButton.Text = "E&xit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1349, 750);
+            this.ClientSize = new System.Drawing.Size(1370, 769);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.colorPanel);
             this.Controls.Add(this.searchTrxGroupBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SearchForm";
+            this.Text = "Search Transaction";
             this.searchTrxGroupBox.ResumeLayout(false);
             this.searchTrxGroupBox.PerformLayout();
             this.colorPanel.ResumeLayout(false);
@@ -164,5 +189,7 @@
         private System.Windows.Forms.ListBox searchResultListBox;
         private System.Windows.Forms.Panel colorPanel;
         private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.Button searchbutton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
