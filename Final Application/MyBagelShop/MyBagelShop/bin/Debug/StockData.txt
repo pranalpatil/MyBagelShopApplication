@@ -1,11 +1,11 @@
 	Small	Medium	Regular	Large	Extra-Large 
 
-Whole Wheat	50	50	48	50	50	
+Whole Wheat	30	50	50	50	50	
 Everything	50	50	50	50	50	
-Blueberry	50	50	46	50	50	
+Blueberry	50	50	50	50	50	
 Chocolate Chip	50	50	50	50	50	
 Onion	50	50	50	50	50	
-Asiago	50	50	50	48	50	
+Asiago	50	50	50	50	50	
 Salt	50	50	50	50	50	
 Poppy Seed	50	50	50	50	50	
 French Toast	50	50	50	50	50	

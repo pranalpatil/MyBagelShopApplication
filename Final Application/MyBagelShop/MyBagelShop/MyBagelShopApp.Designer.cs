@@ -189,6 +189,7 @@
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.Size = new System.Drawing.Size(153, 66);
             this.totalPriceLabel.TabIndex = 12;
+            this.totalPriceLabel.Text = "0";
             this.totalPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // displayListView

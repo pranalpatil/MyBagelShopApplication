@@ -1,4 +1,18 @@
-﻿using System;
+﻿/* Student Name: Pranal Patil
+ * Student ID: 22222293
+ * Date:28/11/2022
+ * Assignment: 4
+ * Assignment: The management team at your client MyBagelShop Inc. (MBSI), a regional chain of 
+ * gourmet bagel bars, wants to become more methodical and systems-oriented in their business 
+ * strategy as a result of the company's rapid rate of development. A well-designed electronic 
+ * point of sale (EPOS) application will be developed by your organization and used by the counter 
+ * \employees to process client orders. The EPOS will be used by MBSI to process and record sales of 
+ * their gourmet bagels to customers, offer inventory management so they can keep an eye on supply levels, 
+ * and give real-time and detailed information so they can make smarter business choices.
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,31 +32,30 @@ namespace MyBagelShop
         {
             InitializeComponent();
         }
+        // Created below variables so we can pass to another form. 
+        public static decimal BagelOverall { get; private set; } = 0;
+        public static decimal tempTotalPrice { get; private set; } = 0;
+        public static decimal avgOverall { get; private set; } = 0;
+        public static decimal Count { get; private set; } = 0;
         // Declearing the Variables and storing the Names & Size in arrays
         decimal[,] FinalBagelprice = new decimal[13, 5];
         const string PriceFilePath = "PriceListBagel.txt";
         const string StockFilePath = "StockData.txt";
         const string TransactionFilePath = "TransactionData.txt";
-        //const string StockPendingFilePath = "StockPending.txt";
         const string SalereportFilePath = "SalesReport.txt";
         private static String[] BeagelNames = { "Whole Wheat", "Everything", "Blueberry", "Chocolate Chip", "Onion", "Asiago", "Salt", "Poppy Seed", "French Toast", "Egg", "Garlic", "Sesame", "Cheddar" };
         private static String[] Bagelsizes = { "Small", "Medium", "Regular", "Large", "Extra-Large " };
         int bagelTypeIndex = 0, bagelSizeIndex = 0, qytOrder=0;
-        string SelectedBagel = "", SelectedSize = "";
-        int SelectedSizs=0;
         decimal finalCost = 0;
         decimal totalStoreCost;
         List<string> BagelQty = new List<string>();
-        List<string> BagleCost = new List<string>();
         int[,] ArrayStock = new int[13, 5];
         int[,] ArraySales = new int[13, 5];
         Boolean DotFlag;
         string TrxID = "", QtyTotal="";
         int StockItemIndex, StockIndexSize;
-        public static decimal BagelOverall { get; private set; } = 0;
-        public static decimal tempTotalPrice { get; private set; } = 0;
-        public static decimal avgOverall { get; private set; } = 0;
-        public static decimal Count { get; private set; } = 0;
+        
+
 
         // Reading the prices of Bagel from Text File.
         public Boolean BagelPrices()
@@ -66,7 +79,26 @@ namespace MyBagelShop
             return true;
 
         }
-        // calling the file on form load. 
+        
+        
+        // Created an method to genrate traansaction no for 5 digit.
+        private string getRandomTransactionNo()
+        {
+            string transactionNo;
+            Random random = new Random();
+            do
+            {
+                return random.Next(10000, 100000).ToString();
+            }
+            while (!alreadyrecord(transactionNo));
+
+        }
+        private bool alreadyrecord(string NUM)
+        {
+            bool found = false;
+            return found;
+        }
+        // Calling the File price file on Form load. 
         private void MyBagelShopApp_Load(object sender, EventArgs e)
         {
             orderBtn.Enabled = false;
@@ -82,7 +114,7 @@ namespace MyBagelShop
             File.WriteAllText(StockFilePath, string.Empty);
             StreamWriter streamWriter = File.AppendText(StockFilePath);
 
-            // Prinitng the col headings in Inventory File
+            // Prinitng the column headings in text File
             for (int p = 0; p < Bagelsizes.Length; p++)
             {
                 streamWriter.Write("\t" + Bagelsizes[p]);
@@ -92,7 +124,7 @@ namespace MyBagelShop
                 }
             }
 
-            // Printing row headers and inventory stock values 
+            // Printing stock data & row headers in text file.
             for (int r = 0; r < BeagelNames.Length; r++)
             {
                 streamWriter.Write(BeagelNames[r] + "\t");
@@ -107,24 +139,26 @@ namespace MyBagelShop
             }
             streamWriter.Close();
         }
-
-        // 
+        // Add to cart button used to add selected bagel and size into data list view. 
         private void addToCartBtn_Click(object sender, EventArgs e)
 
         {
-
+            // checking validation if bagel type is selected or not.
             if (bagelTypeListBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Select Bagel Type");
+                MessageBox.Show("Select at least one Bagel Type","Warning",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+            // checking validation if bagel Size is selected or not.
+
             else if (bagelSizeListBox.SelectedIndex == -1)
             {
-                MessageBox.Show("Select Bagel Size");
+                MessageBox.Show("Select at least one Bagel Size", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            // checking validation if Qyt is entered .
 
             else if (qytNumericUpDown.Value <=0)
             {
-                MessageBox.Show("Enter QYT");
+                MessageBox.Show("Please enter the Quantity", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -138,8 +172,8 @@ namespace MyBagelShop
                         qytOrder=Convert.ToInt32(qytNumericUpDown.Value);
 
                         finalCost=qytOrder*FinalBagelprice[bagelTypeIndex, bagelSizeIndex];
-                        
-                        ListViewItem Items=new ListViewItem(BeagelNames[bagelTypeIndex]);
+                        // storing the seleted data from list view.
+                        ListViewItem Items =new ListViewItem(BeagelNames[bagelTypeIndex]);
                         Items.SubItems.Add(Bagelsizes[bagelSizeIndex]);
                         Items.SubItems.Add(qytOrder.ToString());
                         Items.SubItems.Add(finalCost.ToString("C2"));
@@ -148,22 +182,47 @@ namespace MyBagelShop
                         totalStoreCost +=finalCost;
                         totalPriceLabel.Text= totalStoreCost.ToString("C2");
                         QtyTotal += qytOrder;
-                        
+                        BagelOverall+=qytOrder;
+
                     }
                 }
 
                 orderBtn.Enabled = true;
+                qytNumericUpDown.Value=0;
+                bagelTypeListBox.ClearSelected();
+                bagelSizeListBox.ClearSelected();
 
             }
 
         }
+        public void orderData()
+        {
+            string writeData = string.Join(",", BagelQty);
+            if (!File.Exists(TransactionFilePath))
+            {
+                using (StreamWriter writefile = File.AppendText(TransactionFilePath))
+                {
+                    writefile.WriteLine(writeData);
+                    writefile.Close();
+                }
+            }
+            else
+            {
+                using (StreamWriter fileData = File.AppendText(TransactionFilePath))
+                {
+                    fileData.WriteLine(writeData);
+                    fileData.Close();
+                }
+            }
+        }
+        //below methored created to update stock into text file.
         private void StockUpdate()
         {
             string[] StockProdArray = new string[displayListView.Items.Count];
             string[] StockSizeArray = new string[displayListView.Items.Count];
 
-            // Sorting the data into array 
-            for (int z = 0; z < displayListView.Items.Count; z++)// 
+            // Data is storing into array
+            for (int z = 0; z < displayListView.Items.Count; z++)
             {
                 StockProdArray[z] = displayListView.Items[z].SubItems[0].Text;
                 StockSizeArray[z] = displayListView.Items[z].SubItems[1].Text;
@@ -237,14 +296,14 @@ namespace MyBagelShop
                 }
 
 
-                // storing the temp number of types from stocks
+                // saving the no of types from stock data
                 int FirstCalculate = ArrayStock[StockItemIndex, StockIndexSize];
                 int BagelQytSold = Convert.ToInt32(displayListView.Items[x].SubItems[2].Text);
 
-                // pending stocks calculating
+                // below Calculating the pending stocks
                 int StockPending = FirstCalculate - BagelQytSold;
 
-                // Storing pending stock in array
+                // Below saving the stocks
                 ArrayStock[StockItemIndex, StockIndexSize] = StockPending;
                 ArraySales[StockItemIndex, StockIndexSize] = BagelQytSold + ArraySales[StockItemIndex, StockIndexSize];
 
@@ -267,7 +326,7 @@ namespace MyBagelShop
                 }
             }
 
-            //
+            
             File.WriteAllText(StockFilePath, string.Empty);
             StreamWriter streamWriter = File.AppendText(StockFilePath);
 
@@ -294,7 +353,7 @@ namespace MyBagelShop
             }
             streamWriter.Close();
 
-            // Logic to update the items in sales report
+            // Below are calculating to update ittems in Report
             File.WriteAllText(SalereportFilePath, string.Empty);
             StreamWriter SalesWriter = File.AppendText(SalereportFilePath);
             for (int i = 0; i < Bagelsizes.Length; i++)
@@ -308,7 +367,7 @@ namespace MyBagelShop
                 }
             }
 
-            // Loop to write column headers and array values to file
+            // Below are writing the colum and header and arry values in file
             for (int i = 0; i < BeagelNames.Length; i++)
             {
                 SalesWriter.Write(BeagelNames[i] + "\t");
@@ -321,75 +380,37 @@ namespace MyBagelShop
             SalesWriter.Close();
 
         }
-
-
-        public void orderData()
-        {
-            //string Fileload = File.ReadAllText("TransactionFilePath");
-            string writeData = string.Join(",", BagelQty);
-            if (!File.Exists(TransactionFilePath))
-            {
-                using (StreamWriter writefile = File.AppendText(TransactionFilePath))
-                {
-                    writefile.WriteLine(writeData);
-                    writefile.Close();
-                }
-            }
-            else
-            {
-                using (StreamWriter fileData = File.AppendText(TransactionFilePath))
-                {
-                    fileData.WriteLine(writeData);
-                    fileData.Close();
-                }
-            }
-        }
-        // Created an method to genrate traansaction no.
-        private string getRandomTransactionNo()
-        {
-            string transactionNo;
-            Random random = new Random();
-            do
-            {
-                return random.Next(10000, 100000).ToString();
-            }
-            while (!alreadyrecord(transactionNo));
-
-        }
-
-        private bool alreadyrecord(string NUM)
-        {
-            bool found = false;
-            return found;
-        }
-
+        //once user seleted their order and added to card user can confrim the order by pressing order button and the order will be confired by popup.
 
         private void orderBtn_Click(object sender, EventArgs e)
         {
+            //Checking the stocks
             StockUpdate();
 
             if (DotFlag == true)
             {
+                //storing the transaction ID
                 TrxID = getRandomTransactionNo();
+                //Storing and getting Date
                 string DT = DateTime.Now.ToString("MM/dd/yyyy");
+                //Storing data into list
                 BagelQty.Insert(0, DT);
                 BagelQty.Insert(0, TrxID);
                 BagelQty.Insert(BagelQty.Count, totalStoreCost.ToString("C"));
                 string messagepopupString = string.Join("\n", BagelQty);
                 MessageBox.Show("TheBagelShop" + "\n" + "\n" + "Transaction ID: "+ messagepopupString, "Confirmed!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 orderData();
-
+                
+                //Below are the calculations for summary.
                 Count++;
-                BagelOverall+=qytOrder;
                 tempTotalPrice+=finalCost;
                 avgOverall=tempTotalPrice/Count;
 
-
+                //Clearing the data once order is placed.
                 displayListView.Items.Clear();
                 bagelTypeListBox.ClearSelected();
                 bagelSizeListBox.ClearSelected();
                 qytNumericUpDown.Value=0;
-
                 totalStoreCost=0;
                 totalPriceLabel.Text="0";
                 messagepopupString ="";
@@ -403,35 +424,14 @@ namespace MyBagelShop
             }
 
         }
-
+        //Pressing the stock data button Text fill will open to show the stocks are pending.
         private void stockDataBtn_Click(object sender, EventArgs e)
         {
             Process proc = new Process();
             proc.StartInfo = new ProcessStartInfo(StockFilePath);
             proc.Start();
-        }
-
-        
-
-        private Boolean IsUnique(string SearchString, string transaction)
-        {
-            
-            string[] record;
-            string[] ReadText = File.ReadAllLines(TransactionFilePath);
-            for (int i = 0; i < ReadText.Length; i++)
-            {
-                record = ReadText[i].Split(',');
-                if(record[0] == SearchString)
-                {
-                    return true;
-                    break;
-                }
-
-            }
-
-            return false;
-        }
-
+        }   
+        //Pressing clear buttong will clear all the form.
         private void clearBtn_Click(object sender, EventArgs e)
         {
             displayListView.Items.Clear();
@@ -439,27 +439,28 @@ namespace MyBagelShop
             qytNumericUpDown.Value=0;
             bagelTypeListBox.ClearSelected();
             bagelSizeListBox.ClearSelected();
-            totalPriceLabel.Text="";
+            totalPriceLabel.Text="0";
         }
-
+        // Pressing Search button now from will open and I will give the open of searchs.
         private void SearchButton_Click(object sender, EventArgs e)
         {
             SearchForm Searchtransaction = new SearchForm();
             Searchtransaction.Show();
         }
 
+        //Exit button pressing will close the applications.
         private void exitButton_Click(object sender, EventArgs e)
         {
             Close();
         }
-
+        //sales report will open on clicking the sale report button.
         private void saleReportBtn_Click(object sender, EventArgs e)
         {
             Process proc = new Process();
             proc.StartInfo = new ProcessStartInfo(SalereportFilePath);
             proc.Start();
         }
-
+        //Compnay Summary will show in new form.
         private void summaryBtn_Click(object sender, EventArgs e)
         {
             SummayForm Summary = new SummayForm();

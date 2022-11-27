@@ -1,10 +1,10 @@
 	Small	Medium	Regular	Large	Extra-Large 
-Whole Wheat	0	0	2	0	0	
+Whole Wheat	20	0	0	0	0	
 Everything	0	0	0	0	0	
-Blueberry	0	0	4	0	0	
+Blueberry	0	0	0	0	0	
 Chocolate Chip	0	0	0	0	0	
 Onion	0	0	0	0	0	
-Asiago	0	0	0	2	0	
+Asiago	0	0	0	0	0	
 Salt	0	0	0	0	0	
 Poppy Seed	0	0	0	0	0	
 French Toast	0	0	0	0	0	

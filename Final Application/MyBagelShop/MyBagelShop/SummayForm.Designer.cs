@@ -111,6 +111,7 @@
             // totalBagelDisplaylabel
             // 
             this.totalBagelDisplaylabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.totalBagelDisplaylabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalBagelDisplaylabel.Location = new System.Drawing.Point(503, 254);
             this.totalBagelDisplaylabel.Name = "totalBagelDisplaylabel";
             this.totalBagelDisplaylabel.Size = new System.Drawing.Size(314, 42);
@@ -120,6 +121,7 @@
             // TotalSaleDisplayLabel
             // 
             this.TotalSaleDisplayLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TotalSaleDisplayLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalSaleDisplayLabel.Location = new System.Drawing.Point(503, 327);
             this.TotalSaleDisplayLabel.Name = "TotalSaleDisplayLabel";
             this.TotalSaleDisplayLabel.Size = new System.Drawing.Size(314, 42);
@@ -129,6 +131,7 @@
             // totalTransactionDisplayLabel
             // 
             this.totalTransactionDisplayLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.totalTransactionDisplayLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTransactionDisplayLabel.Location = new System.Drawing.Point(503, 404);
             this.totalTransactionDisplayLabel.Name = "totalTransactionDisplayLabel";
             this.totalTransactionDisplayLabel.Size = new System.Drawing.Size(314, 42);
@@ -138,6 +141,7 @@
             // AverageDisplayLabel
             // 
             this.AverageDisplayLabel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AverageDisplayLabel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AverageDisplayLabel.Location = new System.Drawing.Point(503, 475);
             this.AverageDisplayLabel.Name = "AverageDisplayLabel";
             this.AverageDisplayLabel.Size = new System.Drawing.Size(314, 42);
@@ -146,6 +150,7 @@
             // 
             // exitbutton
             // 
+            this.exitbutton.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitbutton.Location = new System.Drawing.Point(430, 590);
             this.exitbutton.Name = "exitbutton";
             this.exitbutton.Size = new System.Drawing.Size(297, 68);
@@ -158,7 +163,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(84)))), ((int)(((byte)(140)))));
-            this.panel1.Location = new System.Drawing.Point(1007, 156);
+            this.panel1.Location = new System.Drawing.Point(1006, 142);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 542);
             this.panel1.TabIndex = 45;

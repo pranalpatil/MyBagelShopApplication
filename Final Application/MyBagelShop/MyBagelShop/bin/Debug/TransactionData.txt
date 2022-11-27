@@ -1,27 +1,3 @@
-13700,11/27/2022,Whole Wheat,Small,1,$3.50
-13368,11/27/2022,Chocolate Chip,Regular,1,$5.40
-50093,11/27/2022,13368,11/27/2022,Chocolate Chip,Regular,1,$5.40,Blueberry,Medium,1,Whole Wheat,Small,1,$3.50
-53636,11/27/2022,50093,11/27/2022,13368,11/27/2022,Chocolate Chip,Regular,1,$5.40,Blueberry,Medium,1,Whole Wheat,Small,1,$3.50,$3.50
-31565,11/27/2022,Poppy Seed,Regular,2,$11.12
-13519,11/27/2022,31565,11/27/2022,Poppy Seed,Regular,2,$11.12,Onion,Medium,2,$8.86
-71903,11/27/2022,Asiago,Medium,3,Poppy Seed,Regular,4,$36.34
-95204,11/27/2022,Whole Wheat,Small,1,$3.50
-13313,11/27/2022,95204,11/27/2022,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,2,$7.00
-97763,11/27/2022,Whole Wheat,Small,1,$3.50
-69133,11/27/2022,97763,11/27/2022,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,1,$3.50
-65535,11/27/2022,69133,11/27/2022,97763,11/27/2022,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,1,$3.50
-83816,11/27/2022,65535,11/27/2022,69133,11/27/2022,97763,11/27/2022,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,1,$3.50,Whole Wheat,Small,2,$7.00
-59361,11/27/2022,Everything,Medium,2,$8.88
-95877,11/27/2022,59361,11/27/2022,Everything,Medium,2,$8.88,Everything,Medium,2,$17.76
-87525,11/27/2022,Blueberry,Small,1,$4.20
-62540,11/27/2022,Garlic,Small,2,$5.98
-65244,11/27/2022,Whole Wheat,Small,2,$7.00
-90875,11/27/2022,65244,11/27/2022,Whole Wheat,Small,2,$7.00,Blueberry,Regular,2,$17.60
-10341,11/27/2022,Everything,Small,1,$3.80
-96129,11/27/2022,10341,11/27/2022,Everything,Small,1,$3.80,Salt,Large,1,$11.46
-50191,11/27/2022,Everything,Medium,2,$8.88
-26152,11/27/2022,50191,11/27/2022,Everything,Medium,2,$8.88,Egg,Regular,1,$15.38
-65000,11/27/2022,Asiago,Medium,1,$4.70
 33333,11/27/2022,Whole Wheat,Small,1,$3.50
 27158,11/27/2022,Whole Wheat,Small,1,$7.00
 67950,11/27/2022,Whole Wheat,Medium,5,$21.50
@@ -57,3 +33,22 @@
 26118,11/27/2022,Chocolate Chip,Medium,3,$13.80
 22622,11/27/2022,Whole Wheat,Small,2,Blueberry,Regular,4,$28.20
 43328,11/27/2022,Asiago,Large,2,$14.44
+36723,11/27/2022,Whole Wheat,Small,1,$3.50
+13669,11/27/2022,Whole Wheat,Medium,1,$4.30
+53621,11/27/2022,Whole Wheat,Regular,1,$4.80
+94167,11/27/2022,Whole Wheat,Large,1,$5.30
+40980,11/27/2022,Whole Wheat,Extra-Large ,1,$6.00
+27575,11/27/2022,Everything,Small,1,$3.80
+16392,11/27/2022,Everything,Medium,1,$4.44
+67337,11/27/2022,Everything,Regular,1,$5.60
+72155,11/27/2022,Everything,Large,1,$5.80
+65980,11/27/2022,Everything,Extra-Large ,1,$6.32
+39910,11/27/2022,Blueberry,Regular,2,$10.60
+98123,11/27/2022,Onion,Large,2,$13.60
+67801,11/27/2022,Garlic,Small,3,$8.97
+93960,11/27/2022,Whole Wheat,Small,2,$7.00
+22326,11/27/2022,Whole Wheat,Small,2,Asiago,Large,2,Salt,Regular,2,Garlic,Regular,3,Poppy Seed,Small,2,$54.91
+54594,11/27/2022,Whole Wheat,Small,1,$3.50
+56981,11/27/2022,Onion,Regular,10,Everything,Medium,10,$101.10
+11014,11/27/2022,Chocolate Chip,Regular,2,Blueberry,Regular,3,$26.70
+62388,11/27/2022,Everything,Medium,10,Whole Wheat,Small,10,Whole Wheat,Small,10,$70.00

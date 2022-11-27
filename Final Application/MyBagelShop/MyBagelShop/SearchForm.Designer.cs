@@ -85,6 +85,7 @@
             this.clearSearchBtn.Text = "&Clear";
             this.toolTip1.SetToolTip(this.clearSearchBtn, "Press Clear button to clear form");
             this.clearSearchBtn.UseVisualStyleBackColor = true;
+            this.clearSearchBtn.Click += new System.EventHandler(this.clearSearchBtn_Click);
             // 
             // searchInputTextBox
             // 
