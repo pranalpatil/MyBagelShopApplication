@@ -1,6 +1,6 @@
 	Small	Medium	Regular	Large	Extra-Large 
 Whole Wheat	0	0	0	0	0	
-Everything	0	0	0	0	0	
+Everything	2	0	0	0	0	
 Blueberry	0	0	0	0	0	
 Chocolate Chip	0	0	0	0	0	
 Onion	0	0	0	0	0	
@@ -8,7 +8,7 @@ Asiago	0	0	0	0	0
 Salt	0	0	0	0	0	
 Poppy Seed	0	0	0	0	0	
 French Toast	0	0	0	0	0	
-Egg	0	0	0	0	0	
+Egg	1	0	0	0	0	
 Garlic	0	0	0	0	0	
 Sesame	0	0	0	0	0	
 Cheddar	0	0	0	0	0	

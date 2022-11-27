@@ -19,3 +19,5 @@
 90875,11/27/2022,65244,11/27/2022,Whole Wheat,Small,2,$7.00,Blueberry,Regular,2,$17.60
 10341,11/27/2022,Everything,Small,1,$3.80
 96129,11/27/2022,10341,11/27/2022,Everything,Small,1,$3.80,Salt,Large,1,$11.46
+50191,11/27/2022,Everything,Medium,2,$8.88
+26152,11/27/2022,50191,11/27/2022,Everything,Medium,2,$8.88,Egg,Regular,1,$15.38

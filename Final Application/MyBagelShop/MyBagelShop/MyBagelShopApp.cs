@@ -241,7 +241,7 @@ namespace MyBagelShop
 
                 // Storing pending stock in array
                 ArrayStock[StockItemIndex, StockIndexSize] = StockPending;
-                //SalesArray[InventoryItemIndex, StockRemaining] += QTYVolumeSold;
+                ArraySales[StockItemIndex, StockIndexSize] += BagelQytSold;
 
                 // Below are checking the pending stocks
                 if (StockPending < 0)
@@ -385,6 +385,7 @@ namespace MyBagelShop
                 qytNumericUpDown.Value=0;
 
                 messagepopupString="";
+                BagelQty.Clear();
 
 
 
